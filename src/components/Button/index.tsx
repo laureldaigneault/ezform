@@ -2,7 +2,7 @@ import { Button as BaseButton, ButtonProps as BaseButtonProps, buttonClasses } f
 import { BaseComponentProps } from '../../utils/types';
 import { FC } from 'react';
 import { useFormState } from '../Field';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export type ButtonProps = BaseButtonProps & BaseComponentProps;
 

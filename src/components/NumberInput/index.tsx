@@ -5,7 +5,7 @@ import {
 } from '@mui/base/Unstable_NumberInput';
 import { BaseComponentProps } from '../../utils/types';
 import { withField } from '../Field';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export type NumberInputProps = BaseNumberInputProps & BaseComponentProps;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<WatchIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function WatchIcon({ className = '', ...props }: WatchIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M13 8V11.5858L15.4142 14L14 15.4142L11 12.4142V8H13Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M8.27875 1H15.7203L16.7207 4H18.4142L20 5.58579V18.4142L18.4142 20H16.7208L15.7208 23H8.27924L7.27924 20H5.58579L4 18.4142V5.58579L5.58579 4H7.27915L8.27875 1ZM9.38725 4H14.6124L14.2789 3H9.72045L9.38725 4ZM9.38743 20L9.72076 21H14.2792L14.6126 20H9.38743ZM6.41421 6L6 6.41421V17.5858L6.41421 18H17.5858L18 17.5858V6.41421L17.5858 6H6.41421Z" fill="currentcolor"/>
+        <path d='M13 8V11.5858L15.4142 14L14 15.4142L11 12.4142V8H13Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M8.27875 1H15.7203L16.7207 4H18.4142L20 5.58579V18.4142L18.4142 20H16.7208L15.7208 23H8.27924L7.27924 20H5.58579L4 18.4142V5.58579L5.58579 4H7.27915L8.27875 1ZM9.38725 4H14.6124L14.2789 3H9.72045L9.38725 4ZM9.38743 20L9.72076 21H14.2792L14.6126 20H9.38743ZM6.41421 6L6 6.41421V17.5858L6.41421 18H17.5858L18 17.5858V6.41421L17.5858 6H6.41421Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

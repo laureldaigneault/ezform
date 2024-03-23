@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<ImageSquarePlusIconProps>(({ theme, ...props })
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function ImageSquarePlusIcon({ className = '', ...props }: ImageSquarePlusIconProps): React.ReactElement {
-
+  };
+});
+export default function ImageSquarePlusIcon({
+  className = '',
+  ...props
+}: ImageSquarePlusIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M20 1V4H23V6H20V9H18V6H15V4H18V1H20Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M2 2H13V4H4V17.5858L10 11.5858L13.5 15.0858L16 12.5858L20 16.5858V11H22V22H2V2ZM20 19.4142L16 15.4142L14.9142 16.5L18.4142 20H20V19.4142ZM15.5858 20L10 14.4142L4.41421 20H15.5858Z" fill="currentcolor"/>
+        <path d='M20 1V4H23V6H20V9H18V6H15V4H18V1H20Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M2 2H13V4H4V17.5858L10 11.5858L13.5 15.0858L16 12.5858L20 16.5858V11H22V22H2V2ZM20 19.4142L16 15.4142L14.9142 16.5L18.4142 20H20V19.4142ZM15.5858 20L10 14.4142L4.41421 20H15.5858Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

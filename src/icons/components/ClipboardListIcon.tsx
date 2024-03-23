@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,33 @@ const StyledIcon = styled('svg')<ClipboardListIconProps>(({ theme, ...props }) =
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ClipboardListIcon({ className = '', ...props }: ClipboardListIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M12.4142 10.5L9 13.9142L6.58579 11.5L8 10.0858L9 11.0858L11 9.08579L12.4142 10.5Z" fill="currentcolor"/><path d="M13 10.5H17V12.5H13V10.5Z" fill="currentcolor"/><path d="M12.4142 15.5L9 18.9142L6.58579 16.5L8 15.0858L9 16.0858L11 14.0858L12.4142 15.5Z" fill="currentcolor"/><path d="M13 15.5H17V17.5H13V15.5Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M8.58579 1H15.4142L17 2.58579V3H21V23H3V3H7V2.58579L8.58579 1ZM7 5H5V21H19V5H17V7H7V5ZM15 3.41421L14.5858 3H9.41421L9 3.41421V5H15V3.41421Z" fill="currentcolor"/>
+        <path
+          d='M12.4142 10.5L9 13.9142L6.58579 11.5L8 10.0858L9 11.0858L11 9.08579L12.4142 10.5Z'
+          fill='currentcolor'
+        />
+        <path d='M13 10.5H17V12.5H13V10.5Z' fill='currentcolor' />
+        <path
+          d='M12.4142 15.5L9 18.9142L6.58579 16.5L8 15.0858L9 16.0858L11 14.0858L12.4142 15.5Z'
+          fill='currentcolor'
+        />
+        <path d='M13 15.5H17V17.5H13V15.5Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M8.58579 1H15.4142L17 2.58579V3H21V23H3V3H7V2.58579L8.58579 1ZM7 5H5V21H19V5H17V7H7V5ZM15 3.41421L14.5858 3H9.41421L9 3.41421V5H15V3.41421Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

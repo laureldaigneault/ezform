@@ -1,6 +1,6 @@
 export default function iconTemplate({ componentName, height, width, viewBox, svgPaths, globalFill }: any) {
   return `import React from 'react';
-  import styled from 'styled-components';
+  import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */

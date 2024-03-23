@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<ArrowsPointingOutIconProps>(({ theme, ...props 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function ArrowsPointingOutIcon({ className = '', ...props }: ArrowsPointingOutIconProps): React.ReactElement {
-
+  };
+});
+export default function ArrowsPointingOutIcon({
+  className = '',
+  ...props
+}: ArrowsPointingOutIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M2 2H9V4H5.41421L11.4142 10L10 11.4142L4 5.41421V9H2V2Z" fill="currentcolor"/><path d="M15 2H22V9H20V5.41421L14 11.4142L12.5858 10L18.5858 4H15V2Z" fill="currentcolor"/><path d="M11.4142 14L5.41421 20H9V22H2V15H4V18.5858L10 12.5858L11.4142 14Z" fill="currentcolor"/><path d="M14 12.5858L20 18.5858V15H22V22H15V20H18.5858L12.5858 14L14 12.5858Z" fill="currentcolor"/>
+        <path d='M2 2H9V4H5.41421L11.4142 10L10 11.4142L4 5.41421V9H2V2Z' fill='currentcolor' />
+        <path d='M15 2H22V9H20V5.41421L14 11.4142L12.5858 10L18.5858 4H15V2Z' fill='currentcolor' />
+        <path d='M11.4142 14L5.41421 20H9V22H2V15H4V18.5858L10 12.5858L11.4142 14Z' fill='currentcolor' />
+        <path d='M14 12.5858L20 18.5858V15H22V22H15V20H18.5858L12.5858 14L14 12.5858Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,39 @@ const StyledIcon = styled('svg')<CubeDashIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function CubeDashIcon({ className = '', ...props }: CubeDashIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M12 0.856049L15.3598 2.7226L14.3885 4.47092L12 3.14397L9.61149 4.47092L8.6402 2.7226L12 0.856049Z" fill="currentcolor"/><path d="M6.3598 6.27741L5.15293 6.9479L6.33941 7.53381L5.45385 9.32707L4 8.60912V10H2V6.4116L5.38851 4.5291L6.3598 6.27741Z" fill="currentcolor"/><path d="M18.6115 4.5291L22 6.4116V10H20V8.60912L18.5462 9.32707L17.6606 7.53381L18.8471 6.9479L17.6402 6.27741L18.6115 4.5291Z" fill="currentcolor"/><path d="M9.54615 9.11739L12 10.3292L14.4538 9.11739L15.3394 10.9106L13 12.0659V14H11V12.0659L8.66059 10.9106L9.54615 9.11739Z" fill="currentcolor"/><path d="M4 14V16.4116L6.3598 17.7226L5.38851 19.4709L2 17.5884V14H4Z" fill="currentcolor"/><path d="M22 14V17.5884L18.6115 19.4709L17.6402 17.7226L20 16.4116V14H22Z" fill="currentcolor"/><path d="M13 18V20.3005L14.3885 19.5291L15.3598 21.2774L12 23.144L8.6402 21.2774L9.61149 19.5291L11 20.3005V18H13Z" fill="currentcolor"/>
+        <path
+          d='M12 0.856049L15.3598 2.7226L14.3885 4.47092L12 3.14397L9.61149 4.47092L8.6402 2.7226L12 0.856049Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M6.3598 6.27741L5.15293 6.9479L6.33941 7.53381L5.45385 9.32707L4 8.60912V10H2V6.4116L5.38851 4.5291L6.3598 6.27741Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M18.6115 4.5291L22 6.4116V10H20V8.60912L18.5462 9.32707L17.6606 7.53381L18.8471 6.9479L17.6402 6.27741L18.6115 4.5291Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M9.54615 9.11739L12 10.3292L14.4538 9.11739L15.3394 10.9106L13 12.0659V14H11V12.0659L8.66059 10.9106L9.54615 9.11739Z'
+          fill='currentcolor'
+        />
+        <path d='M4 14V16.4116L6.3598 17.7226L5.38851 19.4709L2 17.5884V14H4Z' fill='currentcolor' />
+        <path d='M22 14V17.5884L18.6115 19.4709L17.6402 17.7226L20 16.4116V14H22Z' fill='currentcolor' />
+        <path
+          d='M13 18V20.3005L14.3885 19.5291L15.3598 21.2774L12 23.144L8.6402 21.2774L9.61149 19.5291L11 20.3005V18H13Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

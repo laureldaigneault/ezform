@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,28 @@ const StyledIcon = styled('svg')<ExclamationTriangleIconProps>(({ theme, ...prop
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function ExclamationTriangleIcon({ className = '', ...props }: ExclamationTriangleIconProps): React.ReactElement {
-
+  };
+});
+export default function ExclamationTriangleIcon({
+  className = '',
+  ...props
+}: ExclamationTriangleIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M13.0002 8.00009V14.0001H11.0002V8.00009H13.0002Z" fill="currentcolor"/><path d="M11.0002 16.0001H13.0102V18.0001H11.0002V16.0001Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M11.1152 1.53428L12.8851 1.53424L22.8851 20.5343L22.0002 22.0001H2.00115L1.11621 20.5344L11.1152 1.53428ZM12.0002 4.14717L3.65743 20.0001H20.3438L12.0002 4.14717Z" fill="currentcolor"/>
+        <path d='M13.0002 8.00009V14.0001H11.0002V8.00009H13.0002Z' fill='currentcolor' />
+        <path d='M11.0002 16.0001H13.0102V18.0001H11.0002V16.0001Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M11.1152 1.53428L12.8851 1.53424L22.8851 20.5343L22.0002 22.0001H2.00115L1.11621 20.5344L11.1152 1.53428ZM12.0002 4.14717L3.65743 20.0001H20.3438L12.0002 4.14717Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

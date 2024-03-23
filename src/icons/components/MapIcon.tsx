@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<MapIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function MapIcon({ className = '', ...props }: MapIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M1 1.27679L8.95954 5.8251L14.9595 1.8251L23 6.41965V22.7232L15.0405 18.1748L9.04046 22.1748L1 17.5803V1.27679ZM16 16.4197L21 19.2768V7.5803L16 4.72315V16.4197ZM14 4.86849V16.4648L10 19.1315V7.53516L14 4.86849ZM8 7.5803V19.2768L3 16.4197V4.72315L8 7.5803Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 1.27679L8.95954 5.8251L14.9595 1.8251L23 6.41965V22.7232L15.0405 18.1748L9.04046 22.1748L1 17.5803V1.27679ZM16 16.4197L21 19.2768V7.5803L16 4.72315V16.4197ZM14 4.86849V16.4648L10 19.1315V7.53516L14 4.86849ZM8 7.5803V19.2768L3 16.4197V4.72315L8 7.5803Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

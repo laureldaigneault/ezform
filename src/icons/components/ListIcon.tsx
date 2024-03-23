@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<ListIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ListIcon({ className = '', ...props }: ListIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M2 5H4.009V7H2V5Z" fill="currentcolor"/><path d="M6 5H22V7H6V5Z" fill="currentcolor"/><path d="M2 11H4.009V13H2V11Z" fill="currentcolor"/><path d="M6 11H22V13H6V11Z" fill="currentcolor"/><path d="M2 17H4.009V19H2V17Z" fill="currentcolor"/><path d="M6 17H22V19H6V17Z" fill="currentcolor"/>
+        <path d='M2 5H4.009V7H2V5Z' fill='currentcolor' />
+        <path d='M6 5H22V7H6V5Z' fill='currentcolor' />
+        <path d='M2 11H4.009V13H2V11Z' fill='currentcolor' />
+        <path d='M6 11H22V13H6V11Z' fill='currentcolor' />
+        <path d='M2 17H4.009V19H2V17Z' fill='currentcolor' />
+        <path d='M6 17H22V19H6V17Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

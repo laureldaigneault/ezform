@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<BatteryBoltIconProps>(({ theme, ...props }) => 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function BatteryBoltIcon({ className = '', ...props }: BatteryBoltIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M12.3868 8.72265L10.8685 11H13L13.8321 12.5547L11.2774 16.3868L9.61325 15.2774L11.1315 13H9L8.16795 11.4453L10.7226 7.61325L12.3868 8.72265Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M1 4H21V8H23V16H21V20H1V4ZM21 14V10H19V6H3V18H19V14H21Z" fill="currentcolor"/>
+        <path
+          d='M12.3868 8.72265L10.8685 11H13L13.8321 12.5547L11.2774 16.3868L9.61325 15.2774L11.1315 13H9L8.16795 11.4453L10.7226 7.61325L12.3868 8.72265Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 4H21V8H23V16H21V20H1V4ZM21 14V10H19V6H3V18H19V14H21Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

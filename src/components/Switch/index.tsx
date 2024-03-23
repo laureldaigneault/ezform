@@ -1,7 +1,7 @@
 import { Switch as BaseSwitch, SwitchProps as BaseSwitchProps, switchClasses } from '@mui/base';
 import { BaseComponentProps } from '../../utils/types';
 import { withField } from '../Field';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export type SwitchProps = BaseSwitchProps & BaseComponentProps;
 

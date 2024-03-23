@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,29 @@ const StyledIcon = styled('svg')<CircleParkingIconProps>(({ theme, ...props }) =
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function CircleParkingIcon({ className = '', ...props }: CircleParkingIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M8.5 7H16.5V14H10.5V17H8.5V7ZM10.5 12H14.5V9H10.5V12Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M8.5 7H16.5V14H10.5V17H8.5V7ZM10.5 12H14.5V9H10.5V12Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

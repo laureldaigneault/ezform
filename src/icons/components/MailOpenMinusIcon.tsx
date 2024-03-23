@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<MailOpenMinusIconProps>(({ theme, ...props }) =
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function MailOpenMinusIcon({ className = '', ...props }: MailOpenMinusIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M8.5 8.50001H15.5V10.5H8.5V8.50001Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M12 0.833817L23 7.43382V22H1V7.43382L12 0.833817ZM3 10.9207L12 17.2207L21 10.9207V20H3V10.9207ZM20.9332 8.52611L12 3.1662L3.0668 8.52611L12 14.7794L20.9332 8.52611Z" fill="currentcolor"/>
+        <path d='M8.5 8.50001H15.5V10.5H8.5V8.50001Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M12 0.833817L23 7.43382V22H1V7.43382L12 0.833817ZM3 10.9207L12 17.2207L21 10.9207V20H3V10.9207ZM20.9332 8.52611L12 3.1662L3.0668 8.52611L12 14.7794L20.9332 8.52611Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

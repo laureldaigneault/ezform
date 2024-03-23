@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,29 @@ const StyledIcon = styled('svg')<BitcoinCircleIconProps>(({ theme, ...props }) =
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function BitcoinCircleIcon({ className = '', ...props }: BitcoinCircleIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M11 5.5V7H12V5.5H14V7C15.6569 7 17 8.34315 17 10C17 10.7684 16.7111 11.4692 16.2361 12C16.7111 12.5308 17 13.2316 17 14C17 15.6569 15.6569 17 14 17V18.5H12V17H11V18.5H9V17H7.5V15H9V9H7.5V7H9V5.5H11ZM11 9V11H14C14.5523 11 15 10.5523 15 10C15 9.44772 14.5523 9 14 9H11ZM14 13H11V15H14C14.5523 15 15 14.5523 15 14C15 13.4477 14.5523 13 14 13Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M11 5.5V7H12V5.5H14V7C15.6569 7 17 8.34315 17 10C17 10.7684 16.7111 11.4692 16.2361 12C16.7111 12.5308 17 13.2316 17 14C17 15.6569 15.6569 17 14 17V18.5H12V17H11V18.5H9V17H7.5V15H9V9H7.5V7H9V5.5H11ZM11 9V11H14C14.5523 11 15 10.5523 15 10C15 9.44772 14.5523 9 14 9H11ZM14 13H11V15H14C14.5523 15 15 14.5523 15 14C15 13.4477 14.5523 13 14 13Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

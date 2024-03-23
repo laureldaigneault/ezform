@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<FolderXIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function FolderXIcon({ className = '', ...props }: FolderXIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M10 9.58579L12 11.5858L14 9.58579L15.4142 11L13.4142 13L15.4142 15L14 16.4142L12 14.4142L10 16.4142L8.58579 15L10.5858 13L8.58579 11L10 9.58579Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M1 3H9.30278L12.3028 5H23V21H1V3ZM3 5V19H21V7H11.6972L8.69722 5H3Z" fill="currentcolor"/>
+        <path
+          d='M10 9.58579L12 11.5858L14 9.58579L15.4142 11L13.4142 13L15.4142 15L14 16.4142L12 14.4142L10 16.4142L8.58579 15L10.5858 13L8.58579 11L10 9.58579Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 3H9.30278L12.3028 5H23V21H1V3ZM3 5V19H21V7H11.6972L8.69722 5H3Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

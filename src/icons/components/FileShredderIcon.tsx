@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,28 @@ const StyledIcon = styled('svg')<FileShredderIconProps>(({ theme, ...props }) =>
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function FileShredderIcon({ className = '', ...props }: FileShredderIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M3 1H14.4142L21 7.58579V12H23V14H1V12H3V1ZM5 12H19V9H13V3H5V12ZM15 4.41421L17.5858 7H15V4.41421Z" fill="currentcolor"/><path d="M5 16V20H3V16H5Z" fill="currentcolor"/><path d="M9 16V21H7V16H9Z" fill="currentcolor"/><path d="M13 16V23H11V16H13Z" fill="currentcolor"/><path d="M17 16V21H15V16H17Z" fill="currentcolor"/><path d="M21 16V20H19V16H21Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 1H14.4142L21 7.58579V12H23V14H1V12H3V1ZM5 12H19V9H13V3H5V12ZM15 4.41421L17.5858 7H15V4.41421Z'
+          fill='currentcolor'
+        />
+        <path d='M5 16V20H3V16H5Z' fill='currentcolor' />
+        <path d='M9 16V21H7V16H9Z' fill='currentcolor' />
+        <path d='M13 16V23H11V16H13Z' fill='currentcolor' />
+        <path d='M17 16V21H15V16H17Z' fill='currentcolor' />
+        <path d='M21 16V20H19V16H21Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

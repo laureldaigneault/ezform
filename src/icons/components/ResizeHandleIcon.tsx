@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,19 @@ const StyledIcon = styled('svg')<ResizeHandleIconProps>(({ theme, ...props }) =>
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ResizeHandleIcon({ className = '', ...props }: ResizeHandleIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M22.4144 8.00003L8.00015 22.4142L6.58594 21L21.0002 6.58582L22.4144 8.00003Z" fill="currentcolor"/><path d="M22.4144 15L15.0002 22.4142L13.5859 21L21.0002 13.5858L22.4144 15Z" fill="currentcolor"/>
+        <path d='M22.4144 8.00003L8.00015 22.4142L6.58594 21L21.0002 6.58582L22.4144 8.00003Z' fill='currentcolor' />
+        <path d='M22.4144 15L15.0002 22.4142L13.5859 21L21.0002 13.5858L22.4144 15Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

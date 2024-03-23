@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,30 @@ const StyledIcon = styled('svg')<CreditCardArrowRightIconProps>(({ theme, ...pro
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function CreditCardArrowRightIcon({ className = '', ...props }: CreditCardArrowRightIconProps): React.ReactElement {
-
+  };
+});
+export default function CreditCardArrowRightIcon({
+  className = '',
+  ...props
+}: CreditCardArrowRightIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M23 4H1V16H3V10H21V18H11V20H23V4ZM21 8H3V6H21V8Z" fill="currentcolor"/><path d="M4.58579 17L5.58579 18H1V20H5.58579L4.58579 21L6 22.4142L9.41421 19L6 15.5858L4.58579 17Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M23 4H1V16H3V10H21V18H11V20H23V4ZM21 8H3V6H21V8Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M4.58579 17L5.58579 18H1V20H5.58579L4.58579 21L6 22.4142L9.41421 19L6 15.5858L4.58579 17Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

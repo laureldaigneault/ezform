@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,21 @@ const StyledIcon = styled('svg')<ExpandIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ExpandIcon({ className = '', ...props }: ExpandIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M2 22H10V20H4V14H2V22Z" fill="currentcolor"/><path d="M14 22H22V14H20V20H14V22Z" fill="currentcolor"/><path d="M4 10V4H10V2H2V10H4Z" fill="currentcolor"/><path d="M22 10V2H14V4H20V10H22Z" fill="currentcolor"/>
+        <path d='M2 22H10V20H4V14H2V22Z' fill='currentcolor' />
+        <path d='M14 22H22V14H20V20H14V22Z' fill='currentcolor' />
+        <path d='M4 10V4H10V2H2V10H4Z' fill='currentcolor' />
+        <path d='M22 10V2H14V4H20V10H22Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

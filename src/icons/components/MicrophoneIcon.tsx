@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<MicrophoneIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function MicrophoneIcon({ className = '', ...props }: MicrophoneIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M8 5C8 2.79086 9.79086 1 12 1C14.2091 1 16 2.79086 16 5V12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12V5ZM12 14C13.1046 14 14 13.1046 14 12V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V12C10 13.1046 10.8954 14 12 14Z" fill="currentcolor"/><path d="M6 9V12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12V9H20V12C20 16.0796 16.9463 19.446 13 19.9381V21H17V23H7V21H11V19.9381C7.05369 19.446 4 16.0796 4 12V9H6Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M8 5C8 2.79086 9.79086 1 12 1C14.2091 1 16 2.79086 16 5V12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12V5ZM12 14C13.1046 14 14 13.1046 14 12V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V12C10 13.1046 10.8954 14 12 14Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M6 9V12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12V9H20V12C20 16.0796 16.9463 19.446 13 19.9381V21H17V23H7V21H11V19.9381C7.05369 19.446 4 16.0796 4 12V9H6Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

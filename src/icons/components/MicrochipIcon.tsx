@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<MicrochipIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function MicrochipIcon({ className = '', ...props }: MicrochipIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M8 8H16V16H8V8ZM10 10V14H14V10H10Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M9 1V4H11V1H13V4H15V1H17V4H20V7H23V9H20V11H23V13H20V15H23V17H20V20H17V23H15V20H13V23H11V20H9V23H7V20H4V17H1V15H4V13H1V11H4V9H1V7H4V4H7V1H9ZM6 6V18H18V6H6Z" fill="currentcolor"/>
+        <path fillRule='evenodd' clipRule='evenodd' d='M8 8H16V16H8V8ZM10 10V14H14V10H10Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M9 1V4H11V1H13V4H15V1H17V4H20V7H23V9H20V11H23V13H20V15H23V17H20V20H17V23H15V20H13V23H11V20H9V23H7V20H4V17H1V15H4V13H1V11H4V9H1V7H4V4H7V1H9ZM6 6V18H18V6H6Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

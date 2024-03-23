@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<PauseIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function PauseIcon({ className = '', ...props }: PauseIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M3.5 3H10.5V21H3.5V3ZM5.5 5V19H8.5V5H5.5Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M13.5 3H20.5V21H13.5V3ZM15.5 5V19H18.5V5H15.5Z" fill="currentcolor"/>
+        <path fillRule='evenodd' clipRule='evenodd' d='M3.5 3H10.5V21H3.5V3ZM5.5 5V19H8.5V5H5.5Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M13.5 3H20.5V21H13.5V3ZM15.5 5V19H18.5V5H15.5Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

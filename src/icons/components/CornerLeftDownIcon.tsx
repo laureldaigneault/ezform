@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,21 @@ const StyledIcon = styled('svg')<CornerLeftDownIconProps>(({ theme, ...props }) 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function CornerLeftDownIcon({ className = '', ...props }: CornerLeftDownIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M7.00015 21.4142L12.4144 16L11.0002 14.5858L8.00015 17.5858L8.00015 5L22.0002 5V3L6.00015 3L6.00015 17.5858L3.00015 14.5858L1.58594 16L7.00015 21.4142Z" fill="currentcolor"/>
+        <path
+          d='M7.00015 21.4142L12.4144 16L11.0002 14.5858L8.00015 17.5858L8.00015 5L22.0002 5V3L6.00015 3L6.00015 17.5858L3.00015 14.5858L1.58594 16L7.00015 21.4142Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

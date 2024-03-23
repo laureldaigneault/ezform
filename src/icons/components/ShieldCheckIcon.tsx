@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<ShieldCheckIconProps>(({ theme, ...props }) => 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ShieldCheckIcon({ className = '', ...props }: ShieldCheckIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M17.4129 8.9386L10.5 16.4799L6.58712 12.2113L8.06143 10.8599L10.5 13.5201L15.9386 7.58715L17.4129 8.9386Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M12 0.585815L14.4142 3.00003H22V12.801C22 16.3577 19.9054 19.5808 16.6552 21.0253L12 23.0943L7.34475 21.0253C4.0946 19.5808 2 16.3577 2 12.801V3.00003H9.58579L12 0.585815ZM12 3.41424L10.4142 5.00003H4V12.801C4 15.5674 5.62914 18.0742 8.15703 19.1977L12 20.9057L15.843 19.1977C18.3709 18.0742 20 15.5674 20 12.801V5.00003H13.5858L12 3.41424Z" fill="currentcolor"/>
+        <path
+          d='M17.4129 8.9386L10.5 16.4799L6.58712 12.2113L8.06143 10.8599L10.5 13.5201L15.9386 7.58715L17.4129 8.9386Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M12 0.585815L14.4142 3.00003H22V12.801C22 16.3577 19.9054 19.5808 16.6552 21.0253L12 23.0943L7.34475 21.0253C4.0946 19.5808 2 16.3577 2 12.801V3.00003H9.58579L12 0.585815ZM12 3.41424L10.4142 5.00003H4V12.801C4 15.5674 5.62914 18.0742 8.15703 19.1977L12 20.9057L15.843 19.1977C18.3709 18.0742 20 15.5674 20 12.801V5.00003H13.5858L12 3.41424Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -2,7 +2,7 @@ import { BaseComponentWithChildrenProps } from '../../utils/types';
 import { FC } from 'react';
 import clsx from 'clsx';
 import { useField } from '../Field';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export type LabelProps = BaseComponentWithChildrenProps;
 

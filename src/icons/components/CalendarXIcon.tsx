@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<CalendarXIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function CalendarXIcon({ className = '', ...props }: CalendarXIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M9.5 11.0858L12 13.5858L14.5 11.0858L15.9142 12.5L13.4142 15L15.9142 17.5L14.5 18.9142L12 16.4142L9.5 18.9142L8.08579 17.5L10.5858 15L8.08579 12.5L9.5 11.0858Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M8 1V3H16V1H18V3H22V23H2V3H6V1H8ZM4 5V7H20V5H4ZM20 9H4V21H20V9Z" fill="currentcolor"/>
+        <path
+          d='M9.5 11.0858L12 13.5858L14.5 11.0858L15.9142 12.5L13.4142 15L15.9142 17.5L14.5 18.9142L12 16.4142L9.5 18.9142L8.08579 17.5L10.5858 15L8.08579 12.5L9.5 11.0858Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M8 1V3H16V1H18V3H22V23H2V3H6V1H8ZM4 5V7H20V5H4ZM20 9H4V21H20V9Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

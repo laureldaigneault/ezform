@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,30 @@ const StyledIcon = styled('svg')<FileDashedLinesIconProps>(({ theme, ...props })
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function FileDashedLinesIcon({ className = '', ...props }: FileDashedLinesIconProps): React.ReactElement {
-
+  };
+});
+export default function FileDashedLinesIcon({
+  className = '',
+  ...props
+}: FileDashedLinesIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M3 1H14.4142L21 7.58579V11H19V9H13V3H5V11H3V1ZM15 4.41421L17.5858 7H15V4.41421Z" fill="currentcolor"/><path d="M1 13H6V15H1V13Z" fill="currentcolor"/><path d="M8 13H16V15H8V13Z" fill="currentcolor"/><path d="M18 13H23V15H18V13Z" fill="currentcolor"/><path d="M5 17V21H19V17H21V23H3V17H5Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 1H14.4142L21 7.58579V11H19V9H13V3H5V11H3V1ZM15 4.41421L17.5858 7H15V4.41421Z'
+          fill='currentcolor'
+        />
+        <path d='M1 13H6V15H1V13Z' fill='currentcolor' />
+        <path d='M8 13H16V15H8V13Z' fill='currentcolor' />
+        <path d='M18 13H23V15H18V13Z' fill='currentcolor' />
+        <path d='M5 17V21H19V17H21V23H3V17H5Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

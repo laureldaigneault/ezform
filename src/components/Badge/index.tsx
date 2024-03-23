@@ -1,7 +1,7 @@
 import { Badge as BaseBadge, badgeClasses, BadgeProps as BaseBadgeProps } from '@mui/base';
 import { BaseComponentProps } from '../../utils/types';
 import { FC } from 'react';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export type BadgeProps = BaseBadgeProps & BaseComponentProps;
 

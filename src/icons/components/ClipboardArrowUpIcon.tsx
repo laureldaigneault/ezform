@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,30 @@ const StyledIcon = styled('svg')<ClipboardArrowUpIconProps>(({ theme, ...props }
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function ClipboardArrowUpIcon({ className = '', ...props }: ClipboardArrowUpIconProps): React.ReactElement {
-
+  };
+});
+export default function ClipboardArrowUpIcon({
+  className = '',
+  ...props
+}: ClipboardArrowUpIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M12.0004 9.58579L15.4146 13L14.0004 14.4142L13.0004 13.4142V18H11.0004V13.4142L10.0004 14.4142L8.58622 13L12.0004 9.58579Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M8.58622 1H15.4146L17.0004 2.58579V3H21.0004V23H3.0088L2.84082 3H7.00044V2.58579L8.58622 1ZM7.00044 5H4.85769L4.99207 21H19.0004V5H17.0004V7H7.00044V5ZM15.0004 3.41421L14.5862 3H9.41465L9.00044 3.41421V5H15.0004V3.41421Z" fill="currentcolor"/>
+        <path
+          d='M12.0004 9.58579L15.4146 13L14.0004 14.4142L13.0004 13.4142V18H11.0004V13.4142L10.0004 14.4142L8.58622 13L12.0004 9.58579Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M8.58622 1H15.4146L17.0004 2.58579V3H21.0004V23H3.0088L2.84082 3H7.00044V2.58579L8.58622 1ZM7.00044 5H4.85769L4.99207 21H19.0004V5H17.0004V7H7.00044V5ZM15.0004 3.41421L14.5862 3H9.41465L9.00044 3.41421V5H15.0004V3.41421Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,30 @@ const StyledIcon = styled('svg')<WalletArrowLeftIconProps>(({ theme, ...props })
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function WalletArrowLeftIcon({ className = '', ...props }: WalletArrowLeftIconProps): React.ReactElement {
-
+  };
+});
+export default function WalletArrowLeftIcon({
+  className = '',
+  ...props
+}: WalletArrowLeftIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M10.4142 12L9.41421 13H14V15H9.41421L10.4142 16L9 17.4142L5.58579 14L9 10.5858L10.4142 12Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M1 2H18V6H23V22H1V2ZM3 8V20H21V17H17V11H21V8H3ZM21 13H19V15H21V13ZM3 6V4H16V6H3Z" fill="currentcolor"/>
+        <path
+          d='M10.4142 12L9.41421 13H14V15H9.41421L10.4142 16L9 17.4142L5.58579 14L9 10.5858L10.4142 12Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 2H18V6H23V22H1V2ZM3 8V20H21V17H17V11H21V8H3ZM21 13H19V15H21V13ZM3 6V4H16V6H3Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

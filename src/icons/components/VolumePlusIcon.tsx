@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<VolumePlusIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function VolumePlusIcon({ className = '', ...props }: VolumePlusIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M11 0.237976V23.7621L4.53163 16H1V8.00003H4.53163L11 0.237976ZM9 5.76208L5.46838 10H3V14H5.46838L9 18.238V5.76208Z" fill="currentcolor"/><path d="M19 7.00003V11H23V13H19V17H17V13H13V11H17V7.00003H19Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M11 0.237976V23.7621L4.53163 16H1V8.00003H4.53163L11 0.237976ZM9 5.76208L5.46838 10H3V14H5.46838L9 18.238V5.76208Z'
+          fill='currentcolor'
+        />
+        <path d='M19 7.00003V11H23V13H19V17H17V13H13V11H17V7.00003H19Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

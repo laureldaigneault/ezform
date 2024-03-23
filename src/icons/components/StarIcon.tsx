@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<StarIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function StarIcon({ className = '', ...props }: StarIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M12.0002 1L15.1454 8.78028L23.4276 9.29244L17.2155 14.9266L19.3144 22.7142L12.0001 18.5787L4.68553 22.7141L6.7844 14.9266L0.572266 9.29244L8.85456 8.78028L12.0002 1ZM12 6.33607L10.2362 10.6987L5.42761 10.996L9.03366 14.2666L7.8598 18.622L12.0001 16.2812L16.1401 18.6219L14.9662 14.2666L18.5723 10.996L13.7636 10.6987L12 6.33607Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M12.0002 1L15.1454 8.78028L23.4276 9.29244L17.2155 14.9266L19.3144 22.7142L12.0001 18.5787L4.68553 22.7141L6.7844 14.9266L0.572266 9.29244L8.85456 8.78028L12.0002 1ZM12 6.33607L10.2362 10.6987L5.42761 10.996L9.03366 14.2666L7.8598 18.622L12.0001 16.2812L16.1401 18.6219L14.9662 14.2666L18.5723 10.996L13.7636 10.6987L12 6.33607Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

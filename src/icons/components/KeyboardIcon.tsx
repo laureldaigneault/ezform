@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,30 @@ const StyledIcon = styled('svg')<KeyboardIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function KeyboardIcon({ className = '', ...props }: KeyboardIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M5 11H7.01V13H5V11Z" fill="currentcolor"/><path d="M9 11H11.01V13H9V11Z" fill="currentcolor"/><path d="M13 11H15.01V13H13V11Z" fill="currentcolor"/><path d="M17 11H19.01V13H17V11Z" fill="currentcolor"/><path d="M5 15H7.01V17H5V15Z" fill="currentcolor"/><path d="M9 15H15V17H9V15Z" fill="currentcolor"/><path d="M17 15H19.01V17H17V15Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M17 1V5H9V7H23V21H1V7H7V3H15V1H17ZM3 9V19H21V9H3Z" fill="currentcolor"/>
+        <path d='M5 11H7.01V13H5V11Z' fill='currentcolor' />
+        <path d='M9 11H11.01V13H9V11Z' fill='currentcolor' />
+        <path d='M13 11H15.01V13H13V11Z' fill='currentcolor' />
+        <path d='M17 11H19.01V13H17V11Z' fill='currentcolor' />
+        <path d='M5 15H7.01V17H5V15Z' fill='currentcolor' />
+        <path d='M9 15H15V17H9V15Z' fill='currentcolor' />
+        <path d='M17 15H19.01V17H17V15Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M17 1V5H9V7H23V21H1V7H7V3H15V1H17ZM3 9V19H21V9H3Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

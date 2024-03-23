@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,28 @@ const StyledIcon = styled('svg')<PowerBankIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function PowerBankIcon({ className = '', ...props }: PowerBankIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M7 18H11V20H7V18Z" fill="currentcolor"/><path d="M13.3868 5.72265L11.8685 8H14L14.8321 9.5547L12.2774 13.3868L10.6132 12.2774L12.1315 10H10L9.16795 8.4453L11.7227 4.61325L13.3868 5.72265Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M3 1H21V23H3V1ZM5 17V21H19V17H5ZM19 15H5V3H19V15Z" fill="currentcolor"/>
+        <path d='M7 18H11V20H7V18Z' fill='currentcolor' />
+        <path
+          d='M13.3868 5.72265L11.8685 8H14L14.8321 9.5547L12.2774 13.3868L10.6132 12.2774L12.1315 10H10L9.16795 8.4453L11.7227 4.61325L13.3868 5.72265Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 1H21V23H3V1ZM5 17V21H19V17H5ZM19 15H5V3H19V15Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<ChartScatterIconProps>(({ theme, ...props }) =>
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ChartScatterIcon({ className = '', ...props }: ChartScatterIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M4 2V20H22V22H2V2H4Z" fill="currentcolor"/><path d="M20.5 6.5V8.51H18.5V6.5H20.5Z" fill="currentcolor"/><path d="M10.5 7.5V9.51H8.5V7.5H10.5Z" fill="currentcolor"/><path d="M15.5 11.5V13.51H13.5V11.5H15.5Z" fill="currentcolor"/><path d="M9.5 14.5V16.51H7.5V14.5H9.5Z" fill="currentcolor"/><path d="M19.5 14.5V16.51H17.5V14.5H19.5Z" fill="currentcolor"/>
+        <path d='M4 2V20H22V22H2V2H4Z' fill='currentcolor' />
+        <path d='M20.5 6.5V8.51H18.5V6.5H20.5Z' fill='currentcolor' />
+        <path d='M10.5 7.5V9.51H8.5V7.5H10.5Z' fill='currentcolor' />
+        <path d='M15.5 11.5V13.51H13.5V11.5H15.5Z' fill='currentcolor' />
+        <path d='M9.5 14.5V16.51H7.5V14.5H9.5Z' fill='currentcolor' />
+        <path d='M19.5 14.5V16.51H17.5V14.5H19.5Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

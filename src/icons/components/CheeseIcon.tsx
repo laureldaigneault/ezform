@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<CheeseIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function CheeseIcon({ className = '', ...props }: CheeseIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M11.6163 2H13C18.5228 2 23 6.47715 23 12V21H1V11.5546L11.6163 2ZM20.9381 11H4.60596L12.3837 4H13C17.0796 4 20.446 7.05369 20.9381 11ZM3 13H21V19H3V13Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M11.6163 2H13C18.5228 2 23 6.47715 23 12V21H1V11.5546L11.6163 2ZM20.9381 11H4.60596L12.3837 4H13C17.0796 4 20.446 7.05369 20.9381 11ZM3 13H21V19H3V13Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

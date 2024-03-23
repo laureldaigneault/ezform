@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,29 @@ const StyledIcon = styled('svg')<CodeIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function CodeIcon({ className = '', ...props }: CodeIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M15.1933 2.24075L10.7594 22.1931L8.80703 21.7593L13.2409 1.80688L15.1933 2.24075Z" fill="currentcolor"/><path d="M7.41436 8L3.41436 12L7.41436 16L6.00015 17.4142L0.585938 12L6.00015 6.58579L7.41436 8Z" fill="currentcolor"/><path d="M18.0002 6.58579L23.4144 12L18.0002 17.4142L16.5859 16L20.5859 12L16.5859 8L18.0002 6.58579Z" fill="currentcolor"/>
+        <path
+          d='M15.1933 2.24075L10.7594 22.1931L8.80703 21.7593L13.2409 1.80688L15.1933 2.24075Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M7.41436 8L3.41436 12L7.41436 16L6.00015 17.4142L0.585938 12L6.00015 6.58579L7.41436 8Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M18.0002 6.58579L23.4144 12L18.0002 17.4142L16.5859 16L20.5859 12L16.5859 8L18.0002 6.58579Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

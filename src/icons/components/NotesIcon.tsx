@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,25 @@ const StyledIcon = styled('svg')<NotesIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function NotesIcon({ className = '', ...props }: NotesIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M7 8H12V10H7V8Z" fill="currentcolor"/><path d="M7 12H17V14H7V12Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M9 1V2H11V1H13V2H15V1H17V2H21V23H3V2H7V1H9ZM7 4H5V21H19V4H17V5H15V4H13V5H11V4H9V5H7V4Z" fill="currentcolor"/>
+        <path d='M7 8H12V10H7V8Z' fill='currentcolor' />
+        <path d='M7 12H17V14H7V12Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M9 1V2H11V1H13V2H15V1H17V2H21V23H3V2H7V1H9ZM7 4H5V21H19V4H17V5H15V4H13V5H11V4H9V5H7V4Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -1,6 +1,6 @@
 import { Modal as BaseModal, ModalProps as BaseModalProps } from '@mui/base';
 import { BaseComponentWithChildrenProps } from '../../utils/types';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 import clsx from 'clsx';
 import { FC, ReactNode } from 'react';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,25 @@ const StyledIcon = styled('svg')<PlugIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function PlugIcon({ className = '', ...props }: PlugIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M9 1V7H7V1H9Z" fill="currentcolor"/><path d="M17 1V7H15V1H17Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M3 8H21V10H19V12C19 15.5265 16.3923 18.4439 13 18.9291V23H11V18.9291C7.60771 18.4439 5 15.5265 5 12V10H3V8ZM7 10V12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12V10H7Z" fill="currentcolor"/>
+        <path d='M9 1V7H7V1H9Z' fill='currentcolor' />
+        <path d='M17 1V7H15V1H17Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 8H21V10H19V12C19 15.5265 16.3923 18.4439 13 18.9291V23H11V18.9291C7.60771 18.4439 5 15.5265 5 12V10H3V8ZM7 10V12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12V10H7Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

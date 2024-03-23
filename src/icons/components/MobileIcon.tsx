@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<MobileIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function MobileIcon({ className = '', ...props }: MobileIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M5.58579 1H18.4142L20 2.58579V21.4142L18.4142 23H5.58579L4 21.4142V2.58579L5.58579 1ZM6.41421 3L6 3.41421V20.5858L6.41421 21H17.5858L18 20.5858V3.41421L17.5858 3H15V4H9V3H6.41421Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M5.58579 1H18.4142L20 2.58579V21.4142L18.4142 23H5.58579L4 21.4142V2.58579L5.58579 1ZM6.41421 3L6 3.41421V20.5858L6.41421 21H17.5858L18 20.5858V3.41421L17.5858 3H15V4H9V3H6.41421Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

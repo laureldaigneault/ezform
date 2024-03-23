@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,21 @@ const StyledIcon = styled('svg')<GridPlusIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function GridPlusIcon({ className = '', ...props }: GridPlusIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M2 2H11V11H2V2ZM4 4V9H9V4H4Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M13 2H22V11H13V2ZM15 4V9H20V4H15Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M2 13H11V22H2V13ZM4 15V20H9V15H4Z" fill="currentcolor"/><path d="M18.5 13V16.5H22V18.5H18.5V22H16.5V18.5H13V16.5H16.5V13H18.5Z" fill="currentcolor"/>
+        <path fillRule='evenodd' clipRule='evenodd' d='M2 2H11V11H2V2ZM4 4V9H9V4H4Z' fill='currentcolor' />
+        <path fillRule='evenodd' clipRule='evenodd' d='M13 2H22V11H13V2ZM15 4V9H20V4H15Z' fill='currentcolor' />
+        <path fillRule='evenodd' clipRule='evenodd' d='M2 13H11V22H2V13ZM4 15V20H9V15H4Z' fill='currentcolor' />
+        <path d='M18.5 13V16.5H22V18.5H18.5V22H16.5V18.5H13V16.5H16.5V13H18.5Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

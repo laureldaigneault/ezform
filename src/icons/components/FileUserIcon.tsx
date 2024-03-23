@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<FileUserIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function FileUserIcon({ className = '', ...props }: FileUserIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M10 15C10 13.8954 10.8954 13 12 13C13.1046 13 14 13.8954 14 15C14 16.1046 13.1046 17 12 17C10.8954 17 10 16.1046 10 15Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M3 1H14.4142L21 7.58579V23H3V1ZM5 3V21H7.41731C8.18876 19.2345 9.94971 18 12.0009 18C14.0522 18 15.8131 19.2345 16.5846 21H19V9H13V3H5ZM15 4.41421L17.5858 7H15V4.41421ZM14.2373 21C13.6876 20.3861 12.8889 20 12.0009 20C11.113 20 10.3143 20.3861 9.76461 21H14.2373Z" fill="currentcolor"/>
+        <path
+          d='M10 15C10 13.8954 10.8954 13 12 13C13.1046 13 14 13.8954 14 15C14 16.1046 13.1046 17 12 17C10.8954 17 10 16.1046 10 15Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 1H14.4142L21 7.58579V23H3V1ZM5 3V21H7.41731C8.18876 19.2345 9.94971 18 12.0009 18C14.0522 18 15.8131 19.2345 16.5846 21H19V9H13V3H5ZM15 4.41421L17.5858 7H15V4.41421ZM14.2373 21C13.6876 20.3861 12.8889 20 12.0009 20C11.113 20 10.3143 20.3861 9.76461 21H14.2373Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

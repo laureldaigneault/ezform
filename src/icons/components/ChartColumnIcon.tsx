@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,22 @@ const StyledIcon = styled('svg')<ChartColumnIconProps>(({ theme, ...props }) => 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ChartColumnIcon({ className = '', ...props }: ChartColumnIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M4 2V20H22V22H2V2H4Z" fill="currentcolor"/><path d="M20 4V18H18V4H20Z" fill="currentcolor"/><path d="M12 6V18H10V6H12Z" fill="currentcolor"/><path d="M16 9V18H14V9H16Z" fill="currentcolor"/><path d="M8 12V18H6V12H8Z" fill="currentcolor"/>
+        <path d='M4 2V20H22V22H2V2H4Z' fill='currentcolor' />
+        <path d='M20 4V18H18V4H20Z' fill='currentcolor' />
+        <path d='M12 6V18H10V6H12Z' fill='currentcolor' />
+        <path d='M16 9V18H14V9H16Z' fill='currentcolor' />
+        <path d='M8 12V18H6V12H8Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

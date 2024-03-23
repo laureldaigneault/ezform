@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<BitcoinSignIconProps>(({ theme, ...props }) => 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function BitcoinSignIcon({ className = '', ...props }: BitcoinSignIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M11 1V4H12V1H14V4H14.5C16.9853 4 19 6.01472 19 8.5C19 9.91364 18.3482 11.175 17.3287 12C18.3482 12.825 19 14.0864 19 15.5C19 17.9853 16.9853 20 14.5 20H14V23H12V20H11V23H9V20H6V18H9V6H6V4H9V1H11ZM11 6V11H14.5C15.8807 11 17 9.88071 17 8.5C17 7.11929 15.8807 6 14.5 6H11ZM14.5 13H11V18H14.5C15.8807 18 17 16.8807 17 15.5C17 14.1193 15.8807 13 14.5 13Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M11 1V4H12V1H14V4H14.5C16.9853 4 19 6.01472 19 8.5C19 9.91364 18.3482 11.175 17.3287 12C18.3482 12.825 19 14.0864 19 15.5C19 17.9853 16.9853 20 14.5 20H14V23H12V20H11V23H9V20H6V18H9V6H6V4H9V1H11ZM11 6V11H14.5C15.8807 11 17 9.88071 17 8.5C17 7.11929 15.8807 6 14.5 6H11ZM14.5 13H11V18H14.5C15.8807 18 17 16.8807 17 15.5C17 14.1193 15.8807 13 14.5 13Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

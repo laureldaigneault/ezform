@@ -1,7 +1,7 @@
 import { Input as BaseInput, InputProps as BaseInputProps, inputClasses } from '@mui/base';
 import { BaseComponentProps } from '../../utils/types';
 import { withField } from '../Field';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export type InputProps = BaseInputProps & BaseComponentProps;
 

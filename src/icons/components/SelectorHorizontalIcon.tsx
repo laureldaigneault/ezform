@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,28 @@ const StyledIcon = styled('svg')<SelectorHorizontalIconProps>(({ theme, ...props
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function SelectorHorizontalIcon({ className = '', ...props }: SelectorHorizontalIconProps): React.ReactElement {
-
+  };
+});
+export default function SelectorHorizontalIcon({
+  className = '',
+  ...props
+}: SelectorHorizontalIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M9.41436 7L4.41436 12L9.41436 17L8.00015 18.4142L1.58594 12L8.00015 5.58578L9.41436 7Z" fill="currentcolor"/><path d="M16.0002 5.58578L22.4144 12L16.0002 18.4142L14.5859 17L19.5859 12L14.5859 7L16.0002 5.58578Z" fill="currentcolor"/>
+        <path
+          d='M9.41436 7L4.41436 12L9.41436 17L8.00015 18.4142L1.58594 12L8.00015 5.58578L9.41436 7Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M16.0002 5.58578L22.4144 12L16.0002 18.4142L14.5859 17L19.5859 12L14.5859 7L16.0002 5.58578Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

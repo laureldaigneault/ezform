@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,20 @@ const StyledIcon = styled('svg')<ScalableIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ScalableIcon({ className = '', ...props }: ScalableIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M7 1H23V17H12V15H21V3H9V12H7V1Z" fill="currentcolor"/><path d="M12 5H19V12H17V8.41421L6 19.4142L4.58579 18L15.5858 7H12V5Z" fill="currentcolor"/><path d="M1 13H6V15H3V21H9V18H11V23H1V13Z" fill="currentcolor"/>
+        <path d='M7 1H23V17H12V15H21V3H9V12H7V1Z' fill='currentcolor' />
+        <path d='M12 5H19V12H17V8.41421L6 19.4142L4.58579 18L15.5858 7H12V5Z' fill='currentcolor' />
+        <path d='M1 13H6V15H3V21H9V18H11V23H1V13Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

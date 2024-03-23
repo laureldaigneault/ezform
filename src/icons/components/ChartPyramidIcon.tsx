@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<ChartPyramidIconProps>(({ theme, ...props }) =>
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ChartPyramidIcon({ className = '', ...props }: ChartPyramidIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M11.1152 1.53428L12.8851 1.53424L22.8851 20.5343L22.0002 22.0001H2.00115L1.11621 20.5344L11.1152 1.53428ZM12.0002 4.14717L9.97263 7.99999H14.028L12.0002 4.14717ZM15.0806 9.99998H8.9201L6.81506 14H17.1859L15.0806 9.99998ZM18.2385 16H5.76254L3.65743 20.0001H20.3438L18.2385 16Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M11.1152 1.53428L12.8851 1.53424L22.8851 20.5343L22.0002 22.0001H2.00115L1.11621 20.5344L11.1152 1.53428ZM12.0002 4.14717L9.97263 7.99999H14.028L12.0002 4.14717ZM15.0806 9.99998H8.9201L6.81506 14H17.1859L15.0806 9.99998ZM18.2385 16H5.76254L3.65743 20.0001H20.3438L18.2385 16Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

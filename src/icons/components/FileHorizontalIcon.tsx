@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<FileHorizontalIconProps>(({ theme, ...props }) 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function FileHorizontalIcon({ className = '', ...props }: FileHorizontalIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M23 21V9.58579L16.4142 3H1V21H23ZM21 19H3V5H15V11H21V19ZM19.5858 9L17 6.41421V9H19.5858Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M23 21V9.58579L16.4142 3H1V21H23ZM21 19H3V5H15V11H21V19ZM19.5858 9L17 6.41421V9H19.5858Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

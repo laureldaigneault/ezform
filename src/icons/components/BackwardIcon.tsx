@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<BackwardIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function BackwardIcon({ className = '', ...props }: BackwardIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M13.0003 1.77313V9.77313L22.0003 1.77313V22.2268L13.0003 14.2268V22.2268L1.49512 12L13.0003 1.77313ZM13.5055 12L20.0003 17.7731V6.22682L13.5055 12ZM4.50552 12L11.0003 17.7731V6.22682L4.50552 12Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M13.0003 1.77313V9.77313L22.0003 1.77313V22.2268L13.0003 14.2268V22.2268L1.49512 12L13.0003 1.77313ZM13.5055 12L20.0003 17.7731V6.22682L13.5055 12ZM4.50552 12L11.0003 17.7731V6.22682L4.50552 12Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

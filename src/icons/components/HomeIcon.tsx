@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,29 @@ const StyledIcon = styled('svg')<HomeIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function HomeIcon({ className = '', ...props }: HomeIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M8.00041 14C8.00041 11.7908 9.79127 9.99997 12.0004 9.99997C14.2095 9.99997 16.0004 11.7908 16.0004 14C16.0004 16.2091 14.2095 18 12.0004 18C9.79127 18 8.00041 16.2091 8.00041 14ZM12.0004 12C10.8958 12 10.0004 12.8954 10.0004 14C10.0004 15.1045 10.8958 16 12.0004 16C13.105 16 14.0004 15.1045 14.0004 14C14.0004 12.8954 13.105 12 12.0004 12Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M12.0004 1.1875L23.41 10.8856L22.1147 12.4095L21.0004 11.4624V21.9999H3.00041V11.4624L1.88612 12.4095L0.59082 10.8856L12.0004 1.1875ZM5.00041 9.76238V19.9999H19.0004V9.76238L12.0004 3.81238L5.00041 9.76238Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M8.00041 14C8.00041 11.7908 9.79127 9.99997 12.0004 9.99997C14.2095 9.99997 16.0004 11.7908 16.0004 14C16.0004 16.2091 14.2095 18 12.0004 18C9.79127 18 8.00041 16.2091 8.00041 14ZM12.0004 12C10.8958 12 10.0004 12.8954 10.0004 14C10.0004 15.1045 10.8958 16 12.0004 16C13.105 16 14.0004 15.1045 14.0004 14C14.0004 12.8954 13.105 12 12.0004 12Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M12.0004 1.1875L23.41 10.8856L22.1147 12.4095L21.0004 11.4624V21.9999H3.00041V11.4624L1.88612 12.4095L0.59082 10.8856L12.0004 1.1875ZM5.00041 9.76238V19.9999H19.0004V9.76238L12.0004 3.81238L5.00041 9.76238Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -8,7 +8,7 @@ import {
 } from '@mui/base';
 import { BaseComponentProps } from '../../utils/types';
 import { FC, useRef } from 'react';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export type MenuProps = BaseMenuProps &
   BaseComponentProps & { items: { label: string; disabled?: boolean; onClick?: () => void }[] };

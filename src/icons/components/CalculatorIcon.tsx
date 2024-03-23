@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,31 @@ const StyledIcon = styled('svg')<CalculatorIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function CalculatorIcon({ className = '', ...props }: CalculatorIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M7 11H9.01V13H7V11Z" fill="currentcolor"/><path d="M11 11H13.01V13H11V11Z" fill="currentcolor"/><path d="M15 11H17.01V13H15V11Z" fill="currentcolor"/><path d="M7 14H9.01V16H7V14Z" fill="currentcolor"/><path d="M11 14H13.01V16H11V14Z" fill="currentcolor"/><path d="M17 14V19H15V14H17Z" fill="currentcolor"/><path d="M7 17H9.01V19H7V17Z" fill="currentcolor"/><path d="M11 17H13.01V19H11V17Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M3 1H21V23H3V1ZM5 3V7H19V3H5ZM19 9H5V21H19V9Z" fill="currentcolor"/>
+        <path d='M7 11H9.01V13H7V11Z' fill='currentcolor' />
+        <path d='M11 11H13.01V13H11V11Z' fill='currentcolor' />
+        <path d='M15 11H17.01V13H15V11Z' fill='currentcolor' />
+        <path d='M7 14H9.01V16H7V14Z' fill='currentcolor' />
+        <path d='M11 14H13.01V16H11V14Z' fill='currentcolor' />
+        <path d='M17 14V19H15V14H17Z' fill='currentcolor' />
+        <path d='M7 17H9.01V19H7V17Z' fill='currentcolor' />
+        <path d='M11 17H13.01V19H11V17Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 1H21V23H3V1ZM5 3V7H19V3H5ZM19 9H5V21H19V9Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<LocationArrowIconProps>(({ theme, ...props }) =
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function LocationArrowIcon({ className = '', ...props }: LocationArrowIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M22.9486 1.14374L12.8866 23.1544L9.69389 14.2148L1.06152 9.89857L22.9486 1.14374ZM5.93945 10.1015L11.3071 12.7853L13.1144 17.8457L19.0524 4.8563L5.93945 10.1015Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M22.9486 1.14374L12.8866 23.1544L9.69389 14.2148L1.06152 9.89857L22.9486 1.14374ZM5.93945 10.1015L11.3071 12.7853L13.1144 17.8457L19.0524 4.8563L5.93945 10.1015Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,32 @@ const StyledIcon = styled('svg')<SignalSlashIconProps>(({ theme, ...props }) => 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function SignalSlashIcon({ className = '', ...props }: SignalSlashIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <g clipPath="url(#clip0_1718_1634)"><path d="M2.00015 0.585815L11.4144 10H13.0002V11.5858L15.0002 13.5858V6.00003H17.0002V15.5858L19.0002 17.5858V2.00003H21.0002V19.5858L23.4144 22L22.0002 23.4142L0.585938 2.00003L2.00015 0.585815Z" fill="currentcolor"/><path d="M9.00015 12.6001V21.9999H7.00015V12.6001H9.00015Z" fill="currentcolor"/><path d="M13.0002 16.6V22H11.0002V16.6H13.0002Z" fill="currentcolor"/><path d="M5.00015 18V22H3.00015V18H5.00015Z" fill="currentcolor"/><path d="M17.0002 20V22.01H15.0002V20H17.0002Z" fill="currentcolor"/></g><defs><clipPath id="clip0_1718_1634"><rect width="24" height="24" fill="white"/></clipPath></defs>
+        <g clipPath='url(#clip0_1718_1634)'>
+          <path
+            d='M2.00015 0.585815L11.4144 10H13.0002V11.5858L15.0002 13.5858V6.00003H17.0002V15.5858L19.0002 17.5858V2.00003H21.0002V19.5858L23.4144 22L22.0002 23.4142L0.585938 2.00003L2.00015 0.585815Z'
+            fill='currentcolor'
+          />
+          <path d='M9.00015 12.6001V21.9999H7.00015V12.6001H9.00015Z' fill='currentcolor' />
+          <path d='M13.0002 16.6V22H11.0002V16.6H13.0002Z' fill='currentcolor' />
+          <path d='M5.00015 18V22H3.00015V18H5.00015Z' fill='currentcolor' />
+          <path d='M17.0002 20V22.01H15.0002V20H17.0002Z' fill='currentcolor' />
+        </g>
+        <defs>
+          <clipPath id='clip0_1718_1634'>
+            <rect width='24' height='24' fill='white' />
+          </clipPath>
+        </defs>
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,25 @@ const StyledIcon = styled('svg')<TagsIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function TagsIcon({ className = '', ...props }: TagsIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M6 0.999878H12.4142L23.4142 11.9999L22 13.4141L11.5858 2.99988H6V0.999878Z" fill="currentcolor"/><path d="M4.5 7.49988H7.5V10.4999H4.5V7.49988Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M1 3.99988H10.4142L20.9142 14.4999L11.5 23.9141L1 13.4141V3.99988ZM3 5.99988V12.5857L11.5 21.0857L18.0858 14.4999L9.58579 5.99988H3Z" fill="currentcolor"/>
+        <path d='M6 0.999878H12.4142L23.4142 11.9999L22 13.4141L11.5858 2.99988H6V0.999878Z' fill='currentcolor' />
+        <path d='M4.5 7.49988H7.5V10.4999H4.5V7.49988Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 3.99988H10.4142L20.9142 14.4999L11.5 23.9141L1 13.4141V3.99988ZM3 5.99988V12.5857L11.5 21.0857L18.0858 14.4999L9.58579 5.99988H3Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

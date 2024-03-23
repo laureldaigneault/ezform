@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<MailXIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function MailXIcon({ className = '', ...props }: MailXIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M1 3H23V14H21V8.92066L12 15.2207L3 8.92066V19H14.5348V21H1V3ZM3 6.47934L12 12.7793L21 6.47934V5H3V6.47934Z" fill="currentcolor"/><path d="M17 15.5858L19.5 18.0858L22 15.5858L23.4142 17L20.9142 19.5L23.4142 22L22 23.4142L19.5 20.9142L17 23.4142L15.5858 22L18.0858 19.5L15.5858 17L17 15.5858Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 3H23V14H21V8.92066L12 15.2207L3 8.92066V19H14.5348V21H1V3ZM3 6.47934L12 12.7793L21 6.47934V5H3V6.47934Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M17 15.5858L19.5 18.0858L22 15.5858L23.4142 17L20.9142 19.5L23.4142 22L22 23.4142L19.5 20.9142L17 23.4142L15.5858 22L18.0858 19.5L15.5858 17L17 15.5858Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

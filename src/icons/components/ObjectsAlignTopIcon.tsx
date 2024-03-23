@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<ObjectsAlignTopIconProps>(({ theme, ...props })
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function ObjectsAlignTopIcon({ className = '', ...props }: ObjectsAlignTopIconProps): React.ReactElement {
-
+  };
+});
+export default function ObjectsAlignTopIcon({
+  className = '',
+  ...props
+}: ObjectsAlignTopIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M23 2H1V4H23V2Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M20 16V6H13V16H20ZM18 14H15V8H18V14Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M11 22V6H4V22H11ZM9 20H6V8H9V20Z" fill="currentcolor"/>
+        <path d='M23 2H1V4H23V2Z' fill='currentcolor' />
+        <path fillRule='evenodd' clipRule='evenodd' d='M20 16V6H13V16H20ZM18 14H15V8H18V14Z' fill='currentcolor' />
+        <path fillRule='evenodd' clipRule='evenodd' d='M11 22V6H4V22H11ZM9 20H6V8H9V20Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

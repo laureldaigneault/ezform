@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<RenameIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function RenameIcon({ className = '', ...props }: RenameIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M4 9H15V15H4V9ZM6 11V13H13V11H6Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M14 2H20V4H18V6H23V18H18V20H20V22H14V20H16V18H1V6H16V4H14V2ZM16 8H3V16H16V8ZM18 16H21V8H18V16Z" fill="currentcolor"/>
+        <path fillRule='evenodd' clipRule='evenodd' d='M4 9H15V15H4V9ZM6 11V13H13V11H6Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M14 2H20V4H18V6H23V18H18V20H20V22H14V20H16V18H1V6H16V4H14V2ZM16 8H3V16H16V8ZM18 16H21V8H18V16Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

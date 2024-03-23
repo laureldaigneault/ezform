@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<BoltIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function BoltIcon({ className = '', ...props }: BoltIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M14.5891 0.681702L13.1878 8.77777H22.2127L9.41071 23.3183L10.812 15.2222H1.78711L14.5891 0.681702ZM6.21268 13.2222H13.1878L12.5891 16.6817L17.7871 10.7778H10.812L11.4107 7.31829L6.21268 13.2222Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M14.5891 0.681702L13.1878 8.77777H22.2127L9.41071 23.3183L10.812 15.2222H1.78711L14.5891 0.681702ZM6.21268 13.2222H13.1878L12.5891 16.6817L17.7871 10.7778H10.812L11.4107 7.31829L6.21268 13.2222Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

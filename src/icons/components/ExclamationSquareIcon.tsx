@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<ExclamationSquareIconProps>(({ theme, ...props 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function ExclamationSquareIcon({ className = '', ...props }: ExclamationSquareIconProps): React.ReactElement {
-
+  };
+});
+export default function ExclamationSquareIcon({
+  className = '',
+  ...props
+}: ExclamationSquareIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M13 6V14H11V6H13Z" fill="currentcolor"/><path d="M11 16H13.01V18H11V16Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M2 2H22V22H2V2ZM4 4V20H20V4H4Z" fill="currentcolor"/>
+        <path d='M13 6V14H11V6H13Z' fill='currentcolor' />
+        <path d='M11 16H13.01V18H11V16Z' fill='currentcolor' />
+        <path fillRule='evenodd' clipRule='evenodd' d='M2 2H22V22H2V2ZM4 4V20H20V4H4Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

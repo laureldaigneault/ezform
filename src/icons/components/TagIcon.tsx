@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<TagIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function TagIcon({ className = '', ...props }: TagIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M4.5498 4.5498H7.5498V7.5498H4.5498V4.5498Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M1 1H11.9142L23.9142 13L13 23.9142L1 11.9142V1ZM3 3V11.0858L13 21.0858L21.0858 13L11.0858 3H3Z" fill="currentcolor"/>
+        <path d='M4.5498 4.5498H7.5498V7.5498H4.5498V4.5498Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 1H11.9142L23.9142 13L13 23.9142L1 11.9142V1ZM3 3V11.0858L13 21.0858L21.0858 13L11.0858 3H3Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

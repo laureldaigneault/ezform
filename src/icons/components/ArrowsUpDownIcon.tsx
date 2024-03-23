@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,25 @@ const StyledIcon = styled('svg')<ArrowsUpDownIconProps>(({ theme, ...props }) =>
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ArrowsUpDownIcon({ className = '', ...props }: ArrowsUpDownIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M2.58594 6L7.00015 1.58578L11.4144 6L10.0002 7.41421L8.00015 5.41421L8.00015 22H6.00015L6.00015 5.41421L4.00015 7.41421L2.58594 6Z" fill="currentcolor"/><path d="M14.0001 16.5858L16.0001 18.5858L16.0001 2L18.0001 2L18.0001 18.5858L20.0001 16.5858L21.4144 18L17.0001 22.4142L12.5859 18L14.0001 16.5858Z" fill="currentcolor"/>
+        <path
+          d='M2.58594 6L7.00015 1.58578L11.4144 6L10.0002 7.41421L8.00015 5.41421L8.00015 22H6.00015L6.00015 5.41421L4.00015 7.41421L2.58594 6Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M14.0001 16.5858L16.0001 18.5858L16.0001 2L18.0001 2L18.0001 18.5858L20.0001 16.5858L21.4144 18L17.0001 22.4142L12.5859 18L14.0001 16.5858Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

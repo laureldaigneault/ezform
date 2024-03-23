@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<ShopIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ShopIcon({ className = '', ...props }: ShopIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M5.41922 2H18.5799L23.7227 11H20.9995V22H18.9995V11H14.9995V22H2.99955V11H0.276367L5.41922 2ZM3.72273 9H20.2764L17.4192 4H6.57987L3.72273 9ZM12.9995 11H4.99955V16H12.9995V11ZM12.9995 18H4.99955V20H12.9995V18Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M5.41922 2H18.5799L23.7227 11H20.9995V22H18.9995V11H14.9995V22H2.99955V11H0.276367L5.41922 2ZM3.72273 9H20.2764L17.4192 4H6.57987L3.72273 9ZM12.9995 11H4.99955V16H12.9995V11ZM12.9995 18H4.99955V20H12.9995V18Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

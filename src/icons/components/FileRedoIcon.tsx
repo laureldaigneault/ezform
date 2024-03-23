@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<FileRedoIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function FileRedoIcon({ className = '', ...props }: FileRedoIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M14.1992 11.5H16.1992V16.5H11.1992V14.5H13.0223C12.6694 14.1886 12.2059 14 11.6992 14C10.5946 14 9.69922 14.8954 9.69922 16C9.69922 17.1046 10.5946 18 11.6992 18C12.2121 18 12.6778 17.8083 13.0323 17.491L13.7774 16.8241L15.1113 18.3143L14.3661 18.9812C13.6591 19.614 12.7231 20 11.6992 20C9.49008 20 7.69922 18.2091 7.69922 16C7.69922 13.7909 9.49008 12 11.6992 12C12.6457 12 13.5148 12.3286 14.1992 12.8774V11.5Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M3 1H14.4142L21 7.58579V23H3V1ZM5 3V21H19V9H13V3H5ZM15 4.41421L17.5858 7H15V4.41421Z" fill="currentcolor"/>
+        <path
+          d='M14.1992 11.5H16.1992V16.5H11.1992V14.5H13.0223C12.6694 14.1886 12.2059 14 11.6992 14C10.5946 14 9.69922 14.8954 9.69922 16C9.69922 17.1046 10.5946 18 11.6992 18C12.2121 18 12.6778 17.8083 13.0323 17.491L13.7774 16.8241L15.1113 18.3143L14.3661 18.9812C13.6591 19.614 12.7231 20 11.6992 20C9.49008 20 7.69922 18.2091 7.69922 16C7.69922 13.7909 9.49008 12 11.6992 12C12.6457 12 13.5148 12.3286 14.1992 12.8774V11.5Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 1H14.4142L21 7.58579V23H3V1ZM5 3V21H19V9H13V3H5ZM15 4.41421L17.5858 7H15V4.41421Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

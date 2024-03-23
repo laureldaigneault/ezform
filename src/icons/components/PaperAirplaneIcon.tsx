@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<PaperAirplaneIconProps>(({ theme, ...props }) =
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function PaperAirplaneIcon({ className = '', ...props }: PaperAirplaneIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M10.2092 13.7906L1.68358 10.9487L1.62842 9.07152L21.6284 1.07152L22.9283 2.37139L14.9283 22.3714L13.0511 22.3162L10.2092 13.7906ZM4.90589 9.9146L10.7297 11.8559L17.8477 4.73786L4.90589 9.9146ZM19.2619 6.15208L12.1439 13.2701L14.0852 19.0939L19.2619 6.15208Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M10.2092 13.7906L1.68358 10.9487L1.62842 9.07152L21.6284 1.07152L22.9283 2.37139L14.9283 22.3714L13.0511 22.3162L10.2092 13.7906ZM4.90589 9.9146L10.7297 11.8559L17.8477 4.73786L4.90589 9.9146ZM19.2619 6.15208L12.1439 13.2701L14.0852 19.0939L19.2619 6.15208Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

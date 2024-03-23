@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,29 @@ const StyledIcon = styled('svg')<ChartBulletIconProps>(({ theme, ...props }) => 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ChartBulletIcon({ className = '', ...props }: ChartBulletIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M13 3V4H23V11H13V12H11V11H1V4H11V3H13ZM11 6H8V9H11V6ZM13 9H21V6H13V9ZM6 9V6H3V9H6Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M18 12V13H23V20H18V21H16V20H1V13H16V12H18ZM16 15H13V18H16V15ZM18 18H21V15H18V18ZM11 18V15H3V18H11Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M13 3V4H23V11H13V12H11V11H1V4H11V3H13ZM11 6H8V9H11V6ZM13 9H21V6H13V9ZM6 9V6H3V9H6Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M18 12V13H23V20H18V21H16V20H1V13H16V12H18ZM16 15H13V18H16V15ZM18 18H21V15H18V18ZM11 18V15H3V18H11Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

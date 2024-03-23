@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,26 @@ const StyledIcon = styled('svg')<ObjectsAlignCenterHorizontalIconProps>(({ theme
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function ObjectsAlignCenterHorizontalIcon({ className = '', ...props }: ObjectsAlignCenterHorizontalIconProps): React.ReactElement {
-
+  };
+});
+export default function ObjectsAlignCenterHorizontalIcon({
+  className = '',
+  ...props
+}: ObjectsAlignCenterHorizontalIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M13 1V4H20V11H13V13H17V20H13V23H11V20H7V13H11V11H4V4H11V1H13ZM6 6V9H18V6H6ZM9 15V18H15V15H9Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M13 1V4H20V11H13V13H17V20H13V23H11V20H7V13H11V11H4V4H11V1H13ZM6 6V9H18V6H6ZM9 15V18H15V15H9Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

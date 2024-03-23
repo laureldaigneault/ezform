@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<HospitalIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function HospitalIcon({ className = '', ...props }: HospitalIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M13 4V6H15V8H13V10H11V8H9V6H11V4H13Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M6 1H18V6H23V23H1V6H6V1ZM8 21H9V15H15V21H16V3H8V21ZM18 8V21H21V8H18ZM13 21V17H11V21H13ZM6 21V8H3V21H6Z" fill="currentcolor"/>
+        <path d='M13 4V6H15V8H13V10H11V8H9V6H11V4H13Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M6 1H18V6H23V23H1V6H6V1ZM8 21H9V15H15V21H16V3H8V21ZM18 8V21H21V8H18ZM13 21V17H11V21H13ZM6 21V8H3V21H6Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

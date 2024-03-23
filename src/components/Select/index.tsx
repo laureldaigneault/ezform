@@ -3,7 +3,7 @@ import { Option as BaseOption } from '@mui/base/Option';
 import { optionClasses } from '@mui/base/Option';
 import { BaseComponentProps } from '../../utils/types';
 import { withField } from '../Field';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export type SelectProps = BaseComponentProps;
 

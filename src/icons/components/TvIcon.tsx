@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,26 @@ const StyledIcon = styled('svg')<TvIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function TvIcon({ className = '', ...props }: TvIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M18 9.99998H20.01V12H18V9.99998Z" fill="currentcolor"/><path d="M18 13H20.01V15H18V13Z" fill="currentcolor"/><path d="M18 16H20.01V18H18V16Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M6.84383 1.59442L12 5.71936L17.1562 1.59442L18.4056 3.15616L14.8508 5.99999H23V22H1V5.99999H9.14922L5.59444 3.15616L6.84383 1.59442ZM17 20H21V7.99999H17V20ZM15 7.99999V20H3V7.99999H15Z" fill="currentcolor"/>
+        <path d='M18 9.99998H20.01V12H18V9.99998Z' fill='currentcolor' />
+        <path d='M18 13H20.01V15H18V13Z' fill='currentcolor' />
+        <path d='M18 16H20.01V18H18V16Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M6.84383 1.59442L12 5.71936L17.1562 1.59442L18.4056 3.15616L14.8508 5.99999H23V22H1V5.99999H9.14922L5.59444 3.15616L6.84383 1.59442ZM17 20H21V7.99999H17V20ZM15 7.99999V20H3V7.99999H15Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

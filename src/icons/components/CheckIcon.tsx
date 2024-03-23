@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,21 @@ const StyledIcon = styled('svg')<CheckIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function CheckIcon({ className = '', ...props }: CheckIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M21.4144 6.00003L9.00015 18.4142L2.58594 12L4.00015 10.5858L9.00015 15.5858L20.0002 4.58582L21.4144 6.00003Z" fill="currentcolor"/>
+        <path
+          d='M21.4144 6.00003L9.00015 18.4142L2.58594 12L4.00015 10.5858L9.00015 15.5858L20.0002 4.58582L21.4144 6.00003Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<DistributeSpacingHorizontalIconProps>(({ theme,
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function DistributeSpacingHorizontalIcon({ className = '', ...props }: DistributeSpacingHorizontalIconProps): React.ReactElement {
-
+  };
+});
+export default function DistributeSpacingHorizontalIcon({
+  className = '',
+  ...props
+}: DistributeSpacingHorizontalIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M5 1V23H3V1H5Z" fill="currentcolor"/><path d="M21 1V23H19V1H21Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M8 5H16V19H8V5ZM10 7V17H14V7H10Z" fill="currentcolor"/>
+        <path d='M5 1V23H3V1H5Z' fill='currentcolor' />
+        <path d='M21 1V23H19V1H21Z' fill='currentcolor' />
+        <path fillRule='evenodd' clipRule='evenodd' d='M8 5H16V19H8V5ZM10 7V17H14V7H10Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

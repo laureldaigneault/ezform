@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,21 @@ const StyledIcon = styled('svg')<ChevronUpIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ChevronUpIcon({ className = '', ...props }: ChevronUpIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M4.58594 15L12.0002 7.58578L19.4144 15L18.0002 16.4142L12.0002 10.4142L6.00015 16.4142L4.58594 15Z" fill="currentcolor"/>
+        <path
+          d='M4.58594 15L12.0002 7.58578L19.4144 15L18.0002 16.4142L12.0002 10.4142L6.00015 16.4142L4.58594 15Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

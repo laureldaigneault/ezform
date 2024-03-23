@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,18 @@ const StyledIcon = styled('svg')<SlashForwardIconProps>(({ theme, ...props }) =>
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function SlashForwardIcon({ className = '', ...props }: SlashForwardIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M17.3196 2.49233L8.50731 22.32L6.67969 21.5077L15.492 1.68005L17.3196 2.49233Z" fill="currentcolor"/>
+        <path d='M17.3196 2.49233L8.50731 22.32L6.67969 21.5077L15.492 1.68005L17.3196 2.49233Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

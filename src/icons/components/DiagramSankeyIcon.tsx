@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,19 @@ const StyledIcon = styled('svg')<DiagramSankeyIconProps>(({ theme, ...props }) =
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function DiagramSankeyIcon({ className = '', ...props }: DiagramSankeyIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M11.4648 21H23V19H12.5352L9.86852 15H23V13H1V15H7.46482L11.4648 21Z" fill="currentcolor"/><path d="M1 11H8.53518L12.5352 5H23V3H11.4648L7.46482 9H1V11Z" fill="currentcolor"/>
+        <path d='M11.4648 21H23V19H12.5352L9.86852 15H23V13H1V15H7.46482L11.4648 21Z' fill='currentcolor' />
+        <path d='M1 11H8.53518L12.5352 5H23V3H11.4648L7.46482 9H1V11Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,19 @@ const StyledIcon = styled('svg')<ForkKnifeIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ForkKnifeIcon({ className = '', ...props }: ForkKnifeIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M6 1V9H7V1H9V9H10V1H12V11H9V23H7V11H4V1H6Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M14 1H20V13H16V23H14V1ZM16 11H18V3H16V11Z" fill="currentcolor"/>
+        <path d='M6 1V9H7V1H9V9H10V1H12V11H9V23H7V11H4V1H6Z' fill='currentcolor' />
+        <path fillRule='evenodd' clipRule='evenodd' d='M14 1H20V13H16V23H14V1ZM16 11H18V3H16V11Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

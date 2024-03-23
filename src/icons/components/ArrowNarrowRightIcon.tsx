@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<ArrowNarrowRightIconProps>(({ theme, ...props }
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function ArrowNarrowRightIcon({ className = '', ...props }: ArrowNarrowRightIconProps): React.ReactElement {
-
+  };
+});
+export default function ArrowNarrowRightIcon({
+  className = '',
+  ...props
+}: ArrowNarrowRightIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M16 6.58578L21.4142 12L16 17.4142L14.5858 16L17.5858 13L3 13L3 11L17.5858 11L14.5858 8L16 6.58578Z" fill="currentcolor"/>
+        <path
+          d='M16 6.58578L21.4142 12L16 17.4142L14.5858 16L17.5858 13L3 13L3 11L17.5858 11L14.5858 8L16 6.58578Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

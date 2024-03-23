@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,22 @@ const StyledIcon = styled('svg')<ArrowTopTrayIconProps>(({ theme, ...props }) =>
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ArrowTopTrayIcon({ className = '', ...props }: ArrowTopTrayIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M22 22H2V11H4V20H20V11H22V22Z" fill="currentcolor"/><path d="M11 17V5.41421L8 8.41421L6.58579 7L12 1.58578L17.4142 7L16 8.41421L13 5.41421V17H11Z" fill="currentcolor"/>
+        <path d='M22 22H2V11H4V20H20V11H22V22Z' fill='currentcolor' />
+        <path
+          d='M11 17V5.41421L8 8.41421L6.58579 7L12 1.58578L17.4142 7L16 8.41421L13 5.41421V17H11Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

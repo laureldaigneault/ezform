@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<FilterIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function FilterIcon({ className = '', ...props }: FilterIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M2 1H22V6.41421L15 13.4142V17.4142L9 23.4142V13.4142L2 6.41421V1ZM4 3V5.58579L11 12.5858V18.5858L13 16.5858V12.5858L20 5.58579V3H4Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M2 1H22V6.41421L15 13.4142V17.4142L9 23.4142V13.4142L2 6.41421V1ZM4 3V5.58579L11 12.5858V18.5858L13 16.5858V12.5858L20 5.58579V3H4Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

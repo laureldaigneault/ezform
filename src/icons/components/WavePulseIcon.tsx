@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,21 @@ const StyledIcon = styled('svg')<WavePulseIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function WavePulseIcon({ className = '', ...props }: WavePulseIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M11.0136 2.83561L12.9744 2.77515L15.4907 13.6791L17.5 11H23V13H18.5L14.5093 18.3209L12.1583 8.1331L9.98639 21.1644L8.05132 21.3162L5.27924 13H1V11H6.72076L8.6755 16.8642L11.0136 2.83561Z" fill="currentcolor"/>
+        <path
+          d='M11.0136 2.83561L12.9744 2.77515L15.4907 13.6791L17.5 11H23V13H18.5L14.5093 18.3209L12.1583 8.1331L9.98639 21.1644L8.05132 21.3162L5.27924 13H1V11H6.72076L8.6755 16.8642L11.0136 2.83561Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

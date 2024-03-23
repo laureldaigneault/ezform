@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,25 @@ const StyledIcon = styled('svg')<PlayPauseIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function PlayPauseIcon({ className = '', ...props }: PlayPauseIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M2 3.91943L12.1008 12L2 20.0806V3.91943ZM4 8.08067V15.9194L8.89922 12L4 8.08067Z" fill="currentcolor"/><path d="M16 5.00005V19.0001H14V5.00005H16Z" fill="currentcolor"/><path d="M22 5.00005V19.0001H20V5.00005H22Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M2 3.91943L12.1008 12L2 20.0806V3.91943ZM4 8.08067V15.9194L8.89922 12L4 8.08067Z'
+          fill='currentcolor'
+        />
+        <path d='M16 5.00005V19.0001H14V5.00005H16Z' fill='currentcolor' />
+        <path d='M22 5.00005V19.0001H20V5.00005H22Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

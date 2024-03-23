@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,28 @@ const StyledIcon = styled('svg')<SelectorVerticalIconProps>(({ theme, ...props }
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function SelectorVerticalIcon({ className = '', ...props }: SelectorVerticalIconProps): React.ReactElement {
-
+  };
+});
+export default function SelectorVerticalIcon({
+  className = '',
+  ...props
+}: SelectorVerticalIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M12.0002 1.58578L18.4144 8L17.0002 9.41421L12.0002 4.41421L7.00015 9.41421L5.58594 8L12.0002 1.58578Z" fill="currentcolor"/><path d="M7.00015 14.5858L12.0002 19.5858L17.0002 14.5858L18.4144 16L12.0002 22.4142L5.58594 16L7.00015 14.5858Z" fill="currentcolor"/>
+        <path
+          d='M12.0002 1.58578L18.4144 8L17.0002 9.41421L12.0002 4.41421L7.00015 9.41421L5.58594 8L12.0002 1.58578Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M7.00015 14.5858L12.0002 19.5858L17.0002 14.5858L18.4144 16L12.0002 22.4142L5.58594 16L7.00015 14.5858Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,22 @@ const StyledIcon = styled('svg')<ArrowTopRightOnSquareIconProps>(({ theme, ...pr
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function ArrowTopRightOnSquareIcon({ className = '', ...props }: ArrowTopRightOnSquareIconProps): React.ReactElement {
-
+  };
+});
+export default function ArrowTopRightOnSquareIcon({
+  className = '',
+  ...props
+}: ArrowTopRightOnSquareIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M15 2H22V9H20V5.41421L12 13.4142L10.5858 12L18.5858 4H15V2Z" fill="currentcolor"/><path d="M2 4H13V6H4V20H18V11H20V22H2V4Z" fill="currentcolor"/>
+        <path d='M15 2H22V9H20V5.41421L12 13.4142L10.5858 12L18.5858 4H15V2Z' fill='currentcolor' />
+        <path d='M2 4H13V6H4V20H18V11H20V22H2V4Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

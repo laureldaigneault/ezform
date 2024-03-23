@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,20 @@ const StyledIcon = styled('svg')<SnoozeIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function SnoozeIcon({ className = '', ...props }: SnoozeIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M8 1H14L14.7682 2.64018L11.135 7H15V9H9L8.23178 7.35982L11.865 3H8V1Z" fill="currentcolor"/><path d="M16 11H22L22.7682 12.6402L19.135 17H23V19H17L16.2318 17.3598L19.865 13H16V11Z" fill="currentcolor"/><path d="M1 12H10L10.7474 13.6644L4.22684 21H11V23H2L1.25259 21.3356L7.77316 14H1V12Z" fill="currentcolor"/>
+        <path d='M8 1H14L14.7682 2.64018L11.135 7H15V9H9L8.23178 7.35982L11.865 3H8V1Z' fill='currentcolor' />
+        <path d='M16 11H22L22.7682 12.6402L19.135 17H23V19H17L16.2318 17.3598L19.865 13H16V11Z' fill='currentcolor' />
+        <path d='M1 12H10L10.7474 13.6644L4.22684 21H11V23H2L1.25259 21.3356L7.77316 14H1V12Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

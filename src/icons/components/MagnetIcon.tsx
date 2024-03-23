@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<MagnetIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function MagnetIcon({ className = '', ...props }: MagnetIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M3 1H9V14C9 15.6569 10.3431 17 12 17C13.6569 17 15 15.6569 15 14V1H21V14C21 18.9706 16.9706 23 12 23C7.02944 23 3 18.9706 3 14V1ZM12 21C15.866 21 19 17.866 19 14V7H17V14C17 16.7614 14.7614 19 12 19C9.23858 19 7 16.7614 7 14V7H5V14C5 17.866 8.13401 21 12 21ZM5 5H7V3H5V5ZM17 5H19V3H17V5Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 1H9V14C9 15.6569 10.3431 17 12 17C13.6569 17 15 15.6569 15 14V1H21V14C21 18.9706 16.9706 23 12 23C7.02944 23 3 18.9706 3 14V1ZM12 21C15.866 21 19 17.866 19 14V7H17V14C17 16.7614 14.7614 19 12 19C9.23858 19 7 16.7614 7 14V7H5V14C5 17.866 8.13401 21 12 21ZM5 5H7V3H5V5ZM17 5H19V3H17V5Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

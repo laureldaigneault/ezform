@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<BreadSliceIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function BreadSliceIcon({ className = '', ...props }: BreadSliceIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M1 8.6C1 4.95492 3.95492 2 7.6 2H16.4C20.0451 2 23 4.95492 23 8.6C23 10.3424 21.6893 11.7787 20 11.9767V22H4V11.9767C2.31073 11.7787 1 10.3424 1 8.6ZM7.6 4C5.05949 4 3 6.05949 3 8.6C3 9.3732 3.6268 10 4.4 10H6V20H18V10H19.6C20.3732 10 21 9.3732 21 8.6C21 6.05949 18.9405 4 16.4 4H7.6Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 8.6C1 4.95492 3.95492 2 7.6 2H16.4C20.0451 2 23 4.95492 23 8.6C23 10.3424 21.6893 11.7787 20 11.9767V22H4V11.9767C2.31073 11.7787 1 10.3424 1 8.6ZM7.6 4C5.05949 4 3 6.05949 3 8.6C3 9.3732 3.6268 10 4.4 10H6V20H18V10H19.6C20.3732 10 21 9.3732 21 8.6C21 6.05949 18.9405 4 16.4 4H7.6Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

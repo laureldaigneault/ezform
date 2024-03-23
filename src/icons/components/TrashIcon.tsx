@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,25 @@ const StyledIcon = styled('svg')<TrashIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function TrashIcon({ className = '', ...props }: TrashIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M11 9V18H9V9H11Z" fill="currentcolor"/><path d="M15 9V18H13V9H15Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M7.27924 1H16.7208L17.7208 4H22V6H20V23H4V6H2V4H6.27924L7.27924 1ZM8.38743 4H15.6126L15.2792 3H8.72076L8.38743 4ZM6 6V21H18V6H6Z" fill="currentcolor"/>
+        <path d='M11 9V18H9V9H11Z' fill='currentcolor' />
+        <path d='M15 9V18H13V9H15Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M7.27924 1H16.7208L17.7208 4H22V6H20V23H4V6H2V4H6.27924L7.27924 1ZM8.38743 4H15.6126L15.2792 3H8.72076L8.38743 4ZM6 6V21H18V6H6Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,26 @@ const StyledIcon = styled('svg')<MonitorHeartRateIconProps>(({ theme, ...props }
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function MonitorHeartRateIcon({ className = '', ...props }: MonitorHeartRateIconProps): React.ReactElement {
-
+  };
+});
+export default function MonitorHeartRateIcon({
+  className = '',
+  ...props
+}: MonitorHeartRateIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M1 3H23V21H1V3ZM3 14V19H21V5H3V12H9L9.65486 12.8731L11.8148 6.39345L14.618 12H18V14H13.382L12.1852 11.6066L10.3451 17.1269L8 14H3Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 3H23V21H1V3ZM3 14V19H21V5H3V12H9L9.65486 12.8731L11.8148 6.39345L14.618 12H18V14H13.382L12.1852 11.6066L10.3451 17.1269L8 14H3Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

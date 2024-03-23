@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,28 @@ const StyledIcon = styled('svg')<FileExclamationIconProps>(({ theme, ...props })
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function FileExclamationIcon({ className = '', ...props }: FileExclamationIconProps): React.ReactElement {
-
+  };
+});
+export default function FileExclamationIcon({
+  className = '',
+  ...props
+}: FileExclamationIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M13.0098 11V16H11.0098V11H13.0098Z" fill="currentcolor"/><path d="M10.9998 17H13.0098V19H10.9998V17Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M3 1H14.4142L21 7.58579V23H3V1ZM5 3V21H19V9H13V3H5ZM15 4.41421L17.5858 7H15V4.41421Z" fill="currentcolor"/>
+        <path d='M13.0098 11V16H11.0098V11H13.0098Z' fill='currentcolor' />
+        <path d='M10.9998 17H13.0098V19H10.9998V17Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 1H14.4142L21 7.58579V23H3V1ZM5 3V21H19V9H13V3H5ZM15 4.41421L17.5858 7H15V4.41421Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

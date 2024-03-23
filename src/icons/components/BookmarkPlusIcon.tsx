@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,19 @@ const StyledIcon = styled('svg')<BookmarkPlusIconProps>(({ theme, ...props }) =>
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function BookmarkPlusIcon({ className = '', ...props }: BookmarkPlusIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M3 1H13V3H5V19L12 13.75L19 19V11H21V23L12 16.25L3 23V1Z" fill="currentcolor"/><path d="M20 1V4H23V6H20V9H18V6H15V4H18V1H20Z" fill="currentcolor"/>
+        <path d='M3 1H13V3H5V19L12 13.75L19 19V11H21V23L12 16.25L3 23V1Z' fill='currentcolor' />
+        <path d='M20 1V4H23V6H20V9H18V6H15V4H18V1H20Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

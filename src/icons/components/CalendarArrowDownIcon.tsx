@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,30 @@ const StyledIcon = styled('svg')<CalendarArrowDownIconProps>(({ theme, ...props 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
-export default function CalendarArrowDownIcon({ className = '', ...props }: CalendarArrowDownIconProps): React.ReactElement {
-
+  };
+});
+export default function CalendarArrowDownIcon({
+  className = '',
+  ...props
+}: CalendarArrowDownIconProps): React.ReactElement {
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M13 11L13 15.5858L14 14.5858L15.4142 16L12 19.4142L8.58579 16L10 14.5858L11 15.5858L11 11H13Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M8 1V3H16V1H18V3H22V23H2V3H6V1H8ZM4 5V7H20V5H4ZM20 9H4V21H20V9Z" fill="currentcolor"/>
+        <path
+          d='M13 11L13 15.5858L14 14.5858L15.4142 16L12 19.4142L8.58579 16L10 14.5858L11 15.5858L11 11H13Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M8 1V3H16V1H18V3H22V23H2V3H6V1H8ZM4 5V7H20V5H4ZM20 9H4V21H20V9Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

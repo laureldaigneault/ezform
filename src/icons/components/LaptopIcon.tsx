@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<LaptopIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function LaptopIcon({ className = '', ...props }: LaptopIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M3.58579 3H20.4142L22 4.58579V15H23V19.4142L21.4142 21H2.58579L1 19.4142V15H2V4.58579L3.58579 3ZM3 17V18.5858L3.41421 19H20.5858L21 18.5858V17H3ZM20 15H4V5.41421L4.41421 5H19.5858L20 5.41421V15Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3.58579 3H20.4142L22 4.58579V15H23V19.4142L21.4142 21H2.58579L1 19.4142V15H2V4.58579L3.58579 3ZM3 17V18.5858L3.41421 19H20.5858L21 18.5858V17H3ZM20 15H4V5.41421L4.41421 5H19.5858L20 5.41421V15Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

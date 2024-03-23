@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<LockIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function LockIcon({ className = '', ...props }: LockIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M13 14V18H11V14H13Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M18 9V7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7V9H2V23H22V9H18ZM12 3C9.79086 3 8 4.79086 8 7V9H16V7C16 4.79086 14.2091 3 12 3ZM4 11V21H20V11H4Z" fill="currentcolor"/>
+        <path d='M13 14V18H11V14H13Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M18 9V7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7V9H2V23H22V9H18ZM12 3C9.79086 3 8 4.79086 8 7V9H16V7C16 4.79086 14.2091 3 12 3ZM4 11V21H20V11H4Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

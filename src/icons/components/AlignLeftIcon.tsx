@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,21 @@ const StyledIcon = styled('svg')<AlignLeftIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function AlignLeftIcon({ className = '', ...props }: AlignLeftIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M2 5H22V7H2V5Z" fill="currentcolor"/><path d="M2 9H18V11H2V9Z" fill="currentcolor"/><path d="M2 13H22V15H2V13Z" fill="currentcolor"/><path d="M2 17H18V19H2V17Z" fill="currentcolor"/>
+        <path d='M2 5H22V7H2V5Z' fill='currentcolor' />
+        <path d='M2 9H18V11H2V9Z' fill='currentcolor' />
+        <path d='M2 13H22V15H2V13Z' fill='currentcolor' />
+        <path d='M2 17H18V19H2V17Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,25 @@ const StyledIcon = styled('svg')<MugHotIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function MugHotIcon({ className = '', ...props }: MugHotIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M6 1V3.08579L8 5.08579V8H6V5.91421L4 3.91421V1H6Z" fill="currentcolor"/><path d="M12 1V3.08579L14 5.08579V8H12V5.91421L10 3.91421V1H12Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M1 9H23V17H18V23H1V9ZM18 15H21V11H18V15ZM16 11H3V21H16V11Z" fill="currentcolor"/>
+        <path d='M6 1V3.08579L8 5.08579V8H6V5.91421L4 3.91421V1H6Z' fill='currentcolor' />
+        <path d='M12 1V3.08579L14 5.08579V8H12V5.91421L10 3.91421V1H12Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 9H23V17H18V23H1V9ZM18 15H21V11H18V15ZM16 11H3V21H16V11Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

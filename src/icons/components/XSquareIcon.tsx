@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,22 @@ const StyledIcon = styled('svg')<XSquareIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function XSquareIcon({ className = '', ...props }: XSquareIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M9 7.58579L12 10.5858L15 7.58579L16.4142 9L13.4142 12L16.4142 15L15 16.4142L12 13.4142L9 16.4142L7.58579 15L10.5858 12L7.58579 9L9 7.58579Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M2 2H22V22H2V2ZM4 4V20H20V4H4Z" fill="currentcolor"/>
+        <path
+          d='M9 7.58579L12 10.5858L15 7.58579L16.4142 9L13.4142 12L16.4142 15L15 16.4142L12 13.4142L9 16.4142L7.58579 15L10.5858 12L7.58579 9L9 7.58579Z'
+          fill='currentcolor'
+        />
+        <path fillRule='evenodd' clipRule='evenodd' d='M2 2H22V22H2V2ZM4 4V20H20V4H4Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

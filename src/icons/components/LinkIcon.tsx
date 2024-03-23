@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,26 @@ const StyledIcon = styled('svg')<LinkIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function LinkIcon({ className = '', ...props }: LinkIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M1 12C1 8.68629 3.68629 6 7 6H10V8H7C4.79086 8 3 9.79086 3 12C3 14.2091 4.79086 16 7 16H10V18H7C3.68629 18 1 15.3137 1 12Z" fill="currentcolor"/><path d="M14 6H17C19.973 6 22.441 8.16229 22.917 11H23V12C23 15.3137 20.3137 18 17 18H14V16H17C19.2091 16 21 14.2091 21 12C21 9.79086 19.2091 8 17 8H14V6Z" fill="currentcolor"/><path d="M7 11L17 11V13L7 13V11Z" fill="currentcolor"/>
+        <path
+          d='M1 12C1 8.68629 3.68629 6 7 6H10V8H7C4.79086 8 3 9.79086 3 12C3 14.2091 4.79086 16 7 16H10V18H7C3.68629 18 1 15.3137 1 12Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M14 6H17C19.973 6 22.441 8.16229 22.917 11H23V12C23 15.3137 20.3137 18 17 18H14V16H17C19.2091 16 21 14.2091 21 12C21 9.79086 19.2091 8 17 8H14V6Z'
+          fill='currentcolor'
+        />
+        <path d='M7 11L17 11V13L7 13V11Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

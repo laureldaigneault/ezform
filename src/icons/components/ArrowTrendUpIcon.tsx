@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,21 @@ const StyledIcon = styled('svg')<ArrowTrendUpIconProps>(({ theme, ...props }) =>
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ArrowTrendUpIcon({ className = '', ...props }: ArrowTrendUpIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M2.00015 18.4142L9.00015 11.4142L14.0002 16.4142L21.0002 9.41421V15H23.0002V6H14.0002V8H19.5859L14.0002 13.5858L9.00015 8.58579L0.585938 17L2.00015 18.4142Z" fill="currentcolor"/>
+        <path
+          d='M2.00015 18.4142L9.00015 11.4142L14.0002 16.4142L21.0002 9.41421V15H23.0002V6H14.0002V8H19.5859L14.0002 13.5858L9.00015 8.58579L0.585938 17L2.00015 18.4142Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

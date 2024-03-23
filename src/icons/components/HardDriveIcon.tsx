@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<HardDriveIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function HardDriveIcon({ className = '', ...props }: HardDriveIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M19 16.9999L14 17L14 15L19 14.9999L19 16.9999Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M5.38197 3H18.618L23 11.7639V21H1V11.7639L5.38197 3ZM6.61803 5L3.61803 11H20.382L17.382 5H6.61803ZM21 13V19H3V13H21Z" fill="currentcolor"/>
+        <path d='M19 16.9999L14 17L14 15L19 14.9999L19 16.9999Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M5.38197 3H18.618L23 11.7639V21H1V11.7639L5.38197 3ZM6.61803 5L3.61803 11H20.382L17.382 5H6.61803ZM21 13V19H3V13H21Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

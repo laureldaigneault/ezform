@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,31 @@ const StyledIcon = styled('svg')<UserXIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function UserXIcon({ className = '', ...props }: UserXIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M7 6C7 3.23858 9.23858 1 12 1C14.7614 1 17 3.23858 17 6C17 8.76142 14.7614 11 12 11C9.23858 11 7 8.76142 7 6ZM12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3Z" fill="currentcolor"/><path d="M4.06189 21C4.55399 17.0537 7.92038 14 12 14C12.9449 14 13.8495 14.1634 14.6884 14.4626L15.6303 14.7986L16.3022 12.9149L15.3604 12.5789C14.3088 12.2038 13.1771 12 12 12C6.47715 12 2 16.4772 2 22V23H14V21H4.06189Z" fill="currentcolor"/><path d="M17 15.5858L19.5 18.0858L22 15.5858L23.4142 17L20.9142 19.5L23.4142 22L22 23.4142L19.5 20.9142L17 23.4142L15.5858 22L18.0858 19.5L15.5858 17L17 15.5858Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M7 6C7 3.23858 9.23858 1 12 1C14.7614 1 17 3.23858 17 6C17 8.76142 14.7614 11 12 11C9.23858 11 7 8.76142 7 6ZM12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M4.06189 21C4.55399 17.0537 7.92038 14 12 14C12.9449 14 13.8495 14.1634 14.6884 14.4626L15.6303 14.7986L16.3022 12.9149L15.3604 12.5789C14.3088 12.2038 13.1771 12 12 12C6.47715 12 2 16.4772 2 22V23H14V21H4.06189Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M17 15.5858L19.5 18.0858L22 15.5858L23.4142 17L20.9142 19.5L23.4142 22L22 23.4142L19.5 20.9142L17 23.4142L15.5858 22L18.0858 19.5L15.5858 17L17 15.5858Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

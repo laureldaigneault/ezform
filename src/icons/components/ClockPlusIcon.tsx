@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,35 @@ const StyledIcon = styled('svg')<ClockPlusIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ClockPlusIcon({ className = '', ...props }: ClockPlusIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M5.41436 2.00003L2.00015 5.41424L0.585938 4.00003L4.00015 0.585815L5.41436 2.00003Z" fill="currentcolor"/><path d="M20.0002 0.585815L23.4144 4.00003L22.0002 5.41424L18.5859 2.00003L20.0002 0.585815Z" fill="currentcolor"/><path d="M13.0002 7.00003V11H17.0002V13H13.0002V17H11.0002V13H7.00015V11H11.0002V7.00003H13.0002Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M2.00015 12C2.00015 6.47718 6.4773 2.00003 12.0002 2.00003C17.523 2.00003 22.0002 6.47718 22.0002 12C22.0002 17.5229 17.523 22 12.0002 22C6.4773 22 2.00015 17.5229 2.00015 12ZM12.0002 4.00003C7.58187 4.00003 4.00015 7.58175 4.00015 12C4.00015 16.4183 7.58187 20 12.0002 20C16.4184 20 20.0002 16.4183 20.0002 12C20.0002 7.58175 16.4184 4.00003 12.0002 4.00003Z" fill="currentcolor"/>
+        <path
+          d='M5.41436 2.00003L2.00015 5.41424L0.585938 4.00003L4.00015 0.585815L5.41436 2.00003Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M20.0002 0.585815L23.4144 4.00003L22.0002 5.41424L18.5859 2.00003L20.0002 0.585815Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M13.0002 7.00003V11H17.0002V13H13.0002V17H11.0002V13H7.00015V11H11.0002V7.00003H13.0002Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M2.00015 12C2.00015 6.47718 6.4773 2.00003 12.0002 2.00003C17.523 2.00003 22.0002 6.47718 22.0002 12C22.0002 17.5229 17.523 22 12.0002 22C6.4773 22 2.00015 17.5229 2.00015 12ZM12.0002 4.00003C7.58187 4.00003 4.00015 7.58175 4.00015 12C4.00015 16.4183 7.58187 20 12.0002 20C16.4184 20 20.0002 16.4183 20.0002 12C20.0002 7.58175 16.4184 4.00003 12.0002 4.00003Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

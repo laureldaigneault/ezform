@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<DiagramNextIconProps>(({ theme, ...props }) => 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function DiagramNextIcon({ className = '', ...props }: DiagramNextIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M1 2H23V10H13V14.5858L14 13.5858L15.4142 15L12 18.4142L8.58579 15L10 13.5858L11 14.5858V10H1V2ZM21 8V4H3V8H21Z" fill="currentcolor"/><path d="M1 14H7V16H3V20H21V16H17V14H23V22H1V14Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M1 2H23V10H13V14.5858L14 13.5858L15.4142 15L12 18.4142L8.58579 15L10 13.5858L11 14.5858V10H1V2ZM21 8V4H3V8H21Z'
+          fill='currentcolor'
+        />
+        <path d='M1 14H7V16H3V20H21V16H17V14H23V22H1V14Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

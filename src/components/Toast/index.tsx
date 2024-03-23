@@ -1,7 +1,7 @@
 import { Snackbar as BaseSnackbar, SnackbarCloseReason, SnackbarProps } from '@mui/base';
 import { BaseComponentProps } from '../../utils/types';
 import { FC, useState } from 'react';
-import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export type ToastProps = SnackbarProps &
   BaseComponentProps & {

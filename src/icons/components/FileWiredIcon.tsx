@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<FileWiredIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function FileWiredIcon({ className = '', ...props }: FileWiredIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M6 1H13.4142L18 5.58579V15H13V17.1707C13.8524 17.472 14.528 18.1476 14.8293 19H23V21H14.8293C14.4175 22.1652 13.3062 23 12 23C10.6938 23 9.58254 22.1652 9.17071 21H1V19H9.17071C9.47199 18.1476 10.1476 17.472 11 17.1707V15H6V1ZM16 13V8H11V3H8V13H16ZM13 3.41421V6H15.5858L13 3.41421ZM12 19C11.4477 19 11 19.4477 11 20C11 20.5523 11.4477 21 12 21C12.5523 21 13 20.5523 13 20C13 19.4477 12.5523 19 12 19Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M6 1H13.4142L18 5.58579V15H13V17.1707C13.8524 17.472 14.528 18.1476 14.8293 19H23V21H14.8293C14.4175 22.1652 13.3062 23 12 23C10.6938 23 9.58254 22.1652 9.17071 21H1V19H9.17071C9.47199 18.1476 10.1476 17.472 11 17.1707V15H6V1ZM16 13V8H11V3H8V13H16ZM13 3.41421V6H15.5858L13 3.41421ZM12 19C11.4477 19 11 19.4477 11 20C11 20.5523 11.4477 21 12 21C12.5523 21 13 20.5523 13 20C13 19.4477 12.5523 19 12 19Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

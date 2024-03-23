@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<SquareParkingIconProps>(({ theme, ...props }) =
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function SquareParkingIcon({ className = '', ...props }: SquareParkingIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M8.5 7H16.5V14H10.5V17H8.5V7ZM10.5 12H14.5V9H10.5V12Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M2 2H22V22H2V2ZM4 4V20H20V4H4Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M8.5 7H16.5V14H10.5V17H8.5V7ZM10.5 12H14.5V9H10.5V12Z'
+          fill='currentcolor'
+        />
+        <path fillRule='evenodd' clipRule='evenodd' d='M2 2H22V22H2V2ZM4 4V20H20V4H4Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

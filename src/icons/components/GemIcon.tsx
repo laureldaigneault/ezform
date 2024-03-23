@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<GemIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function GemIcon({ className = '', ...props }: GemIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M6.53144 1H17.4682L23.2623 7.95296L11.9998 23.7205L0.737305 7.95296L6.53144 1ZM7.46819 3L4.13485 7H6.53144L9.86477 3H7.46819ZM11.9998 3.56205L9.13485 7H14.8648L11.9998 3.56205ZM15.5808 9L11.9998 19.0268L8.41882 9H15.5808ZM6.29509 9H3.943L8.64718 15.5859L6.29509 9ZM15.3524 15.5859L17.7045 9H20.0566L15.3524 15.5859ZM19.8648 7H17.4682L14.1349 3H16.5314L19.8648 7Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M6.53144 1H17.4682L23.2623 7.95296L11.9998 23.7205L0.737305 7.95296L6.53144 1ZM7.46819 3L4.13485 7H6.53144L9.86477 3H7.46819ZM11.9998 3.56205L9.13485 7H14.8648L11.9998 3.56205ZM15.5808 9L11.9998 19.0268L8.41882 9H15.5808ZM6.29509 9H3.943L8.64718 15.5859L6.29509 9ZM15.3524 15.5859L17.7045 9H20.0566L15.3524 15.5859ZM19.8648 7H17.4682L14.1349 3H16.5314L19.8648 7Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

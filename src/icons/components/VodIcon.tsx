@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,25 @@ const StyledIcon = styled('svg')<VodIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function VodIcon({ className = '', ...props }: VodIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M1 3H20V5H3V18H1V3Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M11 9V19L17.6667 14L11 9ZM13 13V15L14.3333 14L13 13Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M5 7H23V21H5V7ZM7 9V19H11H21V9H11H7Z" fill="currentcolor"/>
+        <path d='M1 3H20V5H3V18H1V3Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M11 9V19L17.6667 14L11 9ZM13 13V15L14.3333 14L13 13Z'
+          fill='currentcolor'
+        />
+        <path fillRule='evenodd' clipRule='evenodd' d='M5 7H23V21H5V7ZM7 9V19H11H21V9H11H7Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<InboxIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function InboxIcon({ className = '', ...props }: InboxIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M5.32297 2.99976H18.677L23 13.8072V20.9998H1V13.8072L5.32297 2.99976ZM6.67703 4.99976L3.47703 12.9998H8.41397L10.414 14.9998H13.5855L15.5855 12.9998H20.523L17.323 4.99976H6.67703ZM21 14.9998H16.414L14.414 16.9998H9.58554L7.58554 14.9998H3V18.9998H21V14.9998Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M5.32297 2.99976H18.677L23 13.8072V20.9998H1V13.8072L5.32297 2.99976ZM6.67703 4.99976L3.47703 12.9998H8.41397L10.414 14.9998H13.5855L15.5855 12.9998H20.523L17.323 4.99976H6.67703ZM21 14.9998H16.414L14.414 16.9998H9.58554L7.58554 14.9998H3V18.9998H21V14.9998Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

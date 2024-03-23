@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,27 @@ const StyledIcon = styled('svg')<VolumeLowIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function VolumeLowIcon({ className = '', ...props }: VolumeLowIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M11 0.237976V23.7621L4.53163 16H1V8.00003H4.53163L11 0.237976ZM9 5.76208L5.46838 10H3V14H5.46838L9 18.238V5.76208Z" fill="currentcolor"/><path d="M12.6351 8.90127L13.5007 9.40199C14.3948 9.9192 15 10.8884 15 12C15 13.1117 14.3948 14.0809 13.5007 14.5981L12.6351 15.0988L11.6337 13.3676L12.4993 12.8669C12.8008 12.6924 13 12.3689 13 12C13 11.6311 12.8008 11.3076 12.4993 11.1332L11.6337 10.6325L12.6351 8.90127Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M11 0.237976V23.7621L4.53163 16H1V8.00003H4.53163L11 0.237976ZM9 5.76208L5.46838 10H3V14H5.46838L9 18.238V5.76208Z'
+          fill='currentcolor'
+        />
+        <path
+          d='M12.6351 8.90127L13.5007 9.40199C14.3948 9.9192 15 10.8884 15 12C15 13.1117 14.3948 14.0809 13.5007 14.5981L12.6351 15.0988L11.6337 13.3676L12.4993 12.8669C12.8008 12.6924 13 12.3689 13 12C13 11.6311 12.8008 11.3076 12.4993 11.1332L11.6337 10.6325L12.6351 8.90127Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

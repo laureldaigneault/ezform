@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,22 @@ const StyledIcon = styled('svg')<SignalIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function SignalIcon({ className = '', ...props }: SignalIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M21 2V22H19V2H21Z" fill="currentcolor"/><path d="M17 6V22H15V6H17Z" fill="currentcolor"/><path d="M13 10V22H11V10H13Z" fill="currentcolor"/><path d="M9 14V22H7V14H9Z" fill="currentcolor"/><path d="M5 18V22H3V18H5Z" fill="currentcolor"/>
+        <path d='M21 2V22H19V2H21Z' fill='currentcolor' />
+        <path d='M17 6V22H15V6H17Z' fill='currentcolor' />
+        <path d='M13 10V22H11V10H13Z' fill='currentcolor' />
+        <path d='M9 14V22H7V14H9Z' fill='currentcolor' />
+        <path d='M5 18V22H3V18H5Z' fill='currentcolor' />
       </g>
     </StyledIcon>
   );

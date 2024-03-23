@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,23 @@ const StyledIcon = styled('svg')<ThermometerIconProps>(({ theme, ...props }) => 
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ThermometerIcon({ className = '', ...props }: ThermometerIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path fillRule="evenodd" clipRule="evenodd" d="M18.0002 0.585785L23.4144 6L11.4144 18H7.41436L3.00015 22.4142L1.58594 21L6.00015 16.5858V12.5858L18.0002 0.585785ZM14.5002 6.91421L16.0002 8.41421L17.4144 7L15.9144 5.5L18.0002 3.41421L20.5859 6L10.5859 16H8.00015V13.4142L9.50015 11.9142L11.0002 13.4142L12.4144 12L10.9144 10.5L12.0002 9.41421L13.5002 10.9142L14.9144 9.5L13.4144 8L14.5002 6.91421Z" fill="currentcolor"/>
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M18.0002 0.585785L23.4144 6L11.4144 18H7.41436L3.00015 22.4142L1.58594 21L6.00015 16.5858V12.5858L18.0002 0.585785ZM14.5002 6.91421L16.0002 8.41421L17.4144 7L15.9144 5.5L18.0002 3.41421L20.5859 6L10.5859 16H8.00015V13.4142L9.50015 11.9142L11.0002 13.4142L12.4144 12L10.9144 10.5L12.0002 9.41421L13.5002 10.9142L14.9144 9.5L13.4144 8L14.5002 6.91421Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

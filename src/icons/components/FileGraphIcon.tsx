@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,28 @@ const StyledIcon = styled('svg')<FileGraphIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function FileGraphIcon({ className = '', ...props }: FileGraphIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M7 11H11V13H7V11Z" fill="currentcolor"/><path d="M17.4142 15L13 19.4142L11 17.4142L8 20.4142L6.58579 19L11 14.5858L13 16.5858L16 13.5858L17.4142 15Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M3 1H14.4142L21 7.58579V23H3V1ZM5 3V21H19V9H13V3H5ZM15 4.41421L17.5858 7H15V4.41421Z" fill="currentcolor"/>
+        <path d='M7 11H11V13H7V11Z' fill='currentcolor' />
+        <path
+          d='M17.4142 15L13 19.4142L11 17.4142L8 20.4142L6.58579 19L11 14.5858L13 16.5858L16 13.5858L17.4142 15Z'
+          fill='currentcolor'
+        />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M3 1H14.4142L21 7.58579V23H3V1ZM5 3V21H19V9H13V3H5ZM15 4.41421L17.5858 7H15V4.41421Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );

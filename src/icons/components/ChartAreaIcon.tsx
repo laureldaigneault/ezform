@@ -1,5 +1,5 @@
 import React from 'react';
-  import styled from 'styled-components';
+import { styled } from '../../styles/theme';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -38,19 +38,24 @@ const StyledIcon = styled('svg')<ChartAreaIconProps>(({ theme, ...props }) => {
       from: { transform: 'rotate(0deg)' },
       to: { transform: 'rotate(360deg)' },
     },
-  }
-})
+  };
+});
 export default function ChartAreaIcon({ className = '', ...props }: ChartAreaIconProps): React.ReactElement {
-
   return (
     <StyledIcon
       viewBox='0 0 24 24'
       {...props}
       className={`${className}`}
       preserveAspectRatio={'xMidYMid meet'}
-      fill="none">
+      fill='none'>
       <g>
-        <path d="M3 2V20H23V22H1V2H3Z" fill="currentcolor"/><path fillRule="evenodd" clipRule="evenodd" d="M10.6429 5.53039L14.3571 9.53039L16.2143 7.53039L20 11.6073V18H5V11.6073L10.6429 5.53039ZM7 12.3927V16H18V12.3927L16.2143 10.4696L14.3571 12.4696L10.6429 8.46961L7 12.3927Z" fill="currentcolor"/>
+        <path d='M3 2V20H23V22H1V2H3Z' fill='currentcolor' />
+        <path
+          fillRule='evenodd'
+          clipRule='evenodd'
+          d='M10.6429 5.53039L14.3571 9.53039L16.2143 7.53039L20 11.6073V18H5V11.6073L10.6429 5.53039ZM7 12.3927V16H18V12.3927L16.2143 10.4696L14.3571 12.4696L10.6429 8.46961L7 12.3927Z'
+          fill='currentcolor'
+        />
       </g>
     </StyledIcon>
   );
