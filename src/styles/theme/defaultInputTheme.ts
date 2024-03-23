@@ -65,8 +65,8 @@ const defaultInputTheme: InputThemeType = {
   typography: {
     rootFontSize: 16,
     font: {
-      heading: `'Playfair Display', sans-serif`,
-      body: `'Lato', sans-serif`,
+      heading: `Playfair Display, sans-serif`,
+      body: `Lato, sans-serif`,
     },
     weight: {
       lightest: 100,
