@@ -5,7 +5,7 @@ const defaultInputTheme: InputThemeType = {
     contrastThreshold: 3.5,
     common: {
       white: '#FFFFFF',
-      black: '#333331',
+      black: '#333333',
     },
     text: {
       primary: 'rgba(0, 0, 0, 0.8)',
