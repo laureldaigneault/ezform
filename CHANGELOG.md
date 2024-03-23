@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/laureldaigneault/ezform/compare/v1.0.9...v1.0.10) (2024-03-23)
+
+
+### Bug Fixes
+
+* export missing style utilities ([f2d954a](https://github.com/laureldaigneault/ezform/commit/f2d954a93d73fdb3baa9f6bf3902df32d4a9742c))
+
 ## [1.0.9](https://github.com/laureldaigneault/ezform/compare/v1.0.8...v1.0.9) (2024-03-23)
 
 
