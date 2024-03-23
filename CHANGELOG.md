@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/laureldaigneault/ezform/compare/v1.0.6...v1.0.7) (2024-03-23)
+
+
+### Bug Fixes
+
+* hanlebar finally ([0b0a9fc](https://github.com/laureldaigneault/ezform/commit/0b0a9fc37798cca1d95b867daec857d3570cf954))
+
 ## [1.0.6](https://github.com/laureldaigneault/ezform/compare/v1.0.5...v1.0.6) (2024-03-23)
 
 
