@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 export type LabelProps = BaseComponentWithChildrenProps;
 
-const Label: FC<LabelProps> = (props) => {
+const RootLabel: FC<LabelProps> = (props) => {
   const field = useField();
 
   return (
@@ -21,7 +21,7 @@ const Label: FC<LabelProps> = (props) => {
   );
 };
 
-export default styled(Label)<LabelProps>(({ theme }) => {
+export const Label = styled(RootLabel)<LabelProps>(({ theme }) => {
   return {
     ...theme.getTypographyStyle('fieldLabel'),
     [`&.component-label--error `]: {
@@ -29,3 +29,5 @@ export default styled(Label)<LabelProps>(({ theme }) => {
     },
   };
 });
+
+export default Label;

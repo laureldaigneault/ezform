@@ -9,7 +9,7 @@ export type ToastProps = SnackbarProps &
     description?: string;
   };
 
-const Toast: FC<ToastProps> = ({ title, description, ...props }) => {
+const RootToast: FC<ToastProps> = ({ title, description, ...props }) => {
   const [open, setOpen] = useState(true);
 
   const handleClose = (_: any, reason?: SnackbarCloseReason) => {
@@ -37,7 +37,7 @@ const Toast: FC<ToastProps> = ({ title, description, ...props }) => {
   );
 };
 
-export default styled(Toast)<ToastProps>(({ theme, ...props }) => {
+export const Toast = styled(RootToast)<ToastProps>(({ theme, ...props }) => {
   return {
     position: 'fixed',
     zIndex: 5500,
@@ -101,3 +101,5 @@ export default styled(Toast)<ToastProps>(({ theme, ...props }) => {
     },
   };
 });
+
+export default Toast;

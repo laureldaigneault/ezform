@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 export type HelperTextProps = BaseComponentWithChildrenProps;
 
-const HelperText: FC<HelperTextProps> = (props) => {
+const RootHelperText: FC<HelperTextProps> = (props) => {
   const field = useField();
 
   return (
@@ -20,7 +20,7 @@ const HelperText: FC<HelperTextProps> = (props) => {
   );
 };
 
-export default styled(HelperText)<HelperTextProps>(({ theme }) => {
+export const HelperText = styled(RootHelperText)<HelperTextProps>(({ theme }) => {
   return {
     ...theme.getTypographyStyle('fieldHelperText'),
     [`&.component-helperText--error `]: {
@@ -28,3 +28,5 @@ export default styled(HelperText)<HelperTextProps>(({ theme }) => {
     },
   };
 });
+
+export default HelperText;

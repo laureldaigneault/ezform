@@ -70,7 +70,7 @@ const ModalContent = styled('div')<BaseComponentWithChildrenProps>(({ theme }) =
   };
 });
 
-const Modal = (props: ModalProps) => {
+export const Modal = (props: ModalProps) => {
   return (
     <Root slots={{ backdrop: StyledBackdrop }} {...props}>
       <ModalContent>

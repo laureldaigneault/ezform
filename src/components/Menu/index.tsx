@@ -22,7 +22,7 @@ const Wrapper: FC<any> = (props = {}) => {
     </div>
   );
 };
-const Menu: FC<MenuProps> = (props) => {
+const RootMenu: FC<MenuProps> = (props) => {
   const wrapperRef = useRef<any>();
 
   return (
@@ -86,6 +86,8 @@ export const MenuItem = styled(BaseMenuItem)(({ theme, ...props }) => {
   };
 });
 
-export default styled(Menu)<MenuProps>(() => {
+export const Menu = styled(RootMenu)<MenuProps>(() => {
   return {};
 });
+
+export default Menu;

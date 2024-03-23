@@ -39,7 +39,7 @@ const Root = styled('div')<any>(({ theme, ...props }) => {
   };
 });
 
-export default withField<InputProps>(
+export const Input = withField<InputProps>(
   ({ context, ...props }) => {
     return <BaseInput slots={{ root: Root }} slotProps={{ root: { ...props, ...context } as any }} {...props} />;
   },
@@ -49,3 +49,5 @@ export default withField<InputProps>(
     },
   }
 );
+
+export default Input;

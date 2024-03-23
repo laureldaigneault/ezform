@@ -5,11 +5,11 @@ import styled from 'styled-components';
 
 export type BadgeProps = BaseBadgeProps & BaseComponentProps;
 
-const Badge: FC<BadgeProps> = (props) => {
+const RootBadge: FC<BadgeProps> = (props) => {
   return <BaseBadge {...props} />;
 };
 
-export default styled(Badge)<BadgeProps>(({ theme, ...props }) => {
+export const Badge = styled(RootBadge)<BadgeProps>(({ theme, ...props }) => {
   return {
     margin: 0,
     padding: 0,
@@ -40,3 +40,5 @@ export default styled(Badge)<BadgeProps>(({ theme, ...props }) => {
     },
   };
 });
+
+export default Badge;

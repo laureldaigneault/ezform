@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 export type ButtonProps = BaseButtonProps & BaseComponentProps;
 
-const Button: FC<ButtonProps> = (props) => {
+const RootButton: FC<ButtonProps> = (props) => {
   const { submitting } = useFormState();
   return (
     <BaseButton {...props} disabled={props.disabled || submitting}>
@@ -15,7 +15,7 @@ const Button: FC<ButtonProps> = (props) => {
   );
 };
 
-export default styled(Button)<ButtonProps>(({ theme, ...props }) => {
+export const Button = styled(RootButton)<ButtonProps>(({ theme, ...props }) => {
   return {
     backgroundColor: theme.getColor(props.intent).hex,
     borderRadius: theme.getShape('borderRadius'),
@@ -46,3 +46,5 @@ export default styled(Button)<ButtonProps>(({ theme, ...props }) => {
     },
   };
 });
+
+export default Button;

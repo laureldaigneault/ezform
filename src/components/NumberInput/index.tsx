@@ -65,7 +65,7 @@ const Root = styled('div')<NumberInputProps>(({ theme, intent }) => {
   };
 });
 
-export default withField<NumberInputProps>(
+export const NumberInput = withField<NumberInputProps>(
   ({ context, ...props }) => {
     return (
       <BaseNumberInput
@@ -87,3 +87,5 @@ export default withField<NumberInputProps>(
     },
   }
 );
+
+export default NumberInput;

@@ -91,7 +91,7 @@ const Root = styled('div')<any>(({ theme, ...props }) => {
   };
 });
 
-export default withField<SwitchProps>(
+export const Switch = withField<SwitchProps>(
   ({ context, ...props }) => {
     return <BaseSwitch slots={{ root: Root }} slotProps={{ root: { ...props, ...context } as any }} {...props} />;
   },
@@ -102,3 +102,5 @@ export default withField<SwitchProps>(
     },
   }
 );
+
+export default Switch;

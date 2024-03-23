@@ -96,7 +96,7 @@ const Popup = styled('div')<SelectProps>(({ theme }) => {
   };
 });
 
-export default withField<BaseSelectProps<any, any> & SelectProps>(
+export const Select = withField<BaseSelectProps<any, any> & SelectProps>(
   ({ context, placeholder, ...props }) => {
     return (
       <RootContainer id='lolol'>
@@ -120,6 +120,8 @@ export default withField<BaseSelectProps<any, any> & SelectProps>(
     },
   }
 );
+
+export default Select;
 
 const Option = BaseOption;
 export { Option };
