@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/laureldaigneault/ezform/compare/v1.0.0...v1.0.1) (2024-03-23)
+
+
+### Bug Fixes
+
+* lint ([c774913](https://github.com/laureldaigneault/ezform/commit/c77491320367fc2eecaa07fb115715d849afb68a))
+
 # 1.0.0 (2024-03-23)
 
 
