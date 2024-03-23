@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/laureldaigneault/ezform/compare/v1.0.7...v1.0.8) (2024-03-23)
+
+
+### Bug Fixes
+
+* export of missing components ([b3c1d71](https://github.com/laureldaigneault/ezform/commit/b3c1d71ce1d7aea5a0d7ed2d6995e7f25b3687f2))
+
 ## [1.0.7](https://github.com/laureldaigneault/ezform/compare/v1.0.6...v1.0.7) (2024-03-23)
 
 
