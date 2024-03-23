@@ -1,3 +1,11 @@
+## [1.0.14](https://github.com/laureldaigneault/ezform/compare/v1.0.13...v1.0.14) (2024-03-23)
+
+
+### Bug Fixes
+
+* d.ts file missing ([4d353dc](https://github.com/laureldaigneault/ezform/commit/4d353dcf1ce0c7b7dabdf9ceab85ed4940468b7a))
+* eslint ([2d218c9](https://github.com/laureldaigneault/ezform/commit/2d218c9c20863d49b96cd8a963e22c522749a632))
+
 ## [1.0.13](https://github.com/laureldaigneault/ezform/compare/v1.0.12...v1.0.13) (2024-03-23)
 
 
