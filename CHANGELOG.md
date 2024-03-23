@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/laureldaigneault/ezform/compare/v1.0.11...v1.0.12) (2024-03-23)
+
+
+### Bug Fixes
+
+* styled components multi instance ([3cd66b1](https://github.com/laureldaigneault/ezform/commit/3cd66b18606c4c1aae3741e783ffbc6d0edd4bc4))
+
 ## [1.0.11](https://github.com/laureldaigneault/ezform/compare/v1.0.10...v1.0.11) (2024-03-23)
 
 
