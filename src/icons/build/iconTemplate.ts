@@ -1,4 +1,4 @@
-export default function iconTemplate({ componentName, height, width, viewBox, svgPaths, name, globalFill }: any) {
+export default function iconTemplate({ componentName, height, width, viewBox, svgPaths, globalFill }: any) {
   return `import React from 'react';
   import styled from 'styled-components';
 
