@@ -119,8 +119,5 @@
     "typescript": "^4.8.4",
     "use-debounce": "^8.0.4",
     "zod": "^3.22.4"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
