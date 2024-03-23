@@ -155,13 +155,10 @@ export const Form = forwardRef<any, FormProps>(({ initialValues = {}, schema, ch
    * Check if form is valid, and returns result
    */
   const isFormValid = useCallback((_fields: Record<string, FormFieldType> = {}) => {
-    const errors = Object.entries(_fields).reduce(
-      (acc, [k, v]) => {
-        if (v.error) acc[k] = v.errorMessage;
-        return acc;
-      },
-      {} as Record<string, string | null | undefined>
-    );
+    const errors = Object.entries(_fields).reduce((acc, [k, v]) => {
+      if (v.error) acc[k] = v.errorMessage;
+      return acc;
+    }, {} as Record<string, string | null | undefined>);
     const valid = Object.keys(errors).length === 0;
     return {
       valid,
@@ -176,14 +173,11 @@ export const Form = forwardRef<any, FormProps>(({ initialValues = {}, schema, ch
     (options: { touch?: boolean } = {}) => {
       const { touch } = options;
       const allRequiredFields: Record<string, true> = {};
-      const flattenedFields = Object.entries(fields).reduce(
-        (acc, [k, v]) => {
-          if (v.required) allRequiredFields[k] = true;
-          if (v._registered) acc[k] = v.value;
-          return acc;
-        },
-        {} as Record<string, any>
-      );
+      const flattenedFields = Object.entries(fields).reduce((acc, [k, v]) => {
+        if (v.required) allRequiredFields[k] = true;
+        if (v._registered) acc[k] = v.value;
+        return acc;
+      }, {} as Record<string, any>);
 
       // Testing schema
       const validationResult = schema.partial().required(allRequiredFields).safeParse(flattenedFields);
@@ -196,25 +190,22 @@ export const Form = forwardRef<any, FormProps>(({ initialValues = {}, schema, ch
       }
 
       // setFields((_prev) => {
-      const updatedFields = Object.entries(cloneDeep(fields)).reduce(
-        (acc, [k, v]) => {
-          acc[k] = erroredFieldKeys[k]
-            ? {
-                ...v,
-                error: true,
-                errorMessage: erroredFieldKeys[k],
-                ...(touch ? { touched: true } : {}),
-              }
-            : {
-                ...v,
-                error: false,
-                errorMessage: null,
-                ...(touch ? { touched: true } : {}),
-              };
-          return acc;
-        },
-        {} as Record<string, FormFieldType>
-      );
+      const updatedFields = Object.entries(cloneDeep(fields)).reduce((acc, [k, v]) => {
+        acc[k] = erroredFieldKeys[k]
+          ? {
+              ...v,
+              error: true,
+              errorMessage: erroredFieldKeys[k],
+              ...(touch ? { touched: true } : {}),
+            }
+          : {
+              ...v,
+              error: false,
+              errorMessage: null,
+              ...(touch ? { touched: true } : {}),
+            };
+        return acc;
+      }, {} as Record<string, FormFieldType>);
       setFields(updatedFields);
       const { valid, errors } = isFormValid(updatedFields);
 
@@ -234,19 +225,16 @@ export const Form = forwardRef<any, FormProps>(({ initialValues = {}, schema, ch
    */
   const resetForm = useCallback(() => {
     setFields((_prev) => {
-      return Object.entries(_prev).reduce(
-        (acc, [k, v]) => {
-          acc[k] = {
-            ...v,
-            touched: !!v.originalValue,
-            value: v.originalValue ?? undefined,
-            error: false,
-            errorMessage: null,
-          };
-          return acc;
-        },
-        {} as Record<string, FormFieldType>
-      );
+      return Object.entries(_prev).reduce((acc, [k, v]) => {
+        acc[k] = {
+          ...v,
+          touched: !!v.originalValue,
+          value: v.originalValue ?? undefined,
+          error: false,
+          errorMessage: null,
+        };
+        return acc;
+      }, {} as Record<string, FormFieldType>);
     });
   }, [initialValues]);
 
@@ -258,19 +246,16 @@ export const Form = forwardRef<any, FormProps>(({ initialValues = {}, schema, ch
    */
   const clearForm = useCallback(() => {
     setFields((_prev) => {
-      return Object.entries(_prev).reduce(
-        (acc, [k, v]) => {
-          acc[k] = {
-            ...v,
-            touched: false,
-            value: undefined,
-            error: false,
-            errorMessage: null,
-          };
-          return acc;
-        },
-        {} as Record<string, FormFieldType>
-      );
+      return Object.entries(_prev).reduce((acc, [k, v]) => {
+        acc[k] = {
+          ...v,
+          touched: false,
+          value: undefined,
+          error: false,
+          errorMessage: null,
+        };
+        return acc;
+      }, {} as Record<string, FormFieldType>);
     });
   }, [initialValues]);
 

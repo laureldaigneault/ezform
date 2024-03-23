@@ -36,7 +36,7 @@ const Menu: FC<MenuProps> = (props) => {
           anchor={() => wrapperRef.current}>
           {(props.items || []).map((item) => {
             return (
-              <MenuItem disabled={item.disabled} label={item.label} onClick={item.onClick}>
+              <MenuItem key={item.label} disabled={item.disabled} label={item.label} onClick={item.onClick}>
                 {item.label}
               </MenuItem>
             );
@@ -47,7 +47,7 @@ const Menu: FC<MenuProps> = (props) => {
   );
 };
 
-const Listbox = styled('ul')<MenuProps>(({ theme, ...props }) => {
+const Listbox = styled('ul')<MenuProps>(({ theme }) => {
   return {
     backgroundColor: theme.palette.background.default,
     top: theme.getSpacing(1),
@@ -86,6 +86,6 @@ export const MenuItem = styled(BaseMenuItem)(({ theme, ...props }) => {
   };
 });
 
-export default styled(Menu)<MenuProps>(({ theme, ...props }) => {
+export default styled(Menu)<MenuProps>(() => {
   return {};
 });

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 export type SelectProps = BaseComponentProps;
 
-const RootContainer = styled('div')<SelectProps>(({ theme, ...props }) => {
+const RootContainer = styled('div')<SelectProps>(({ theme }) => {
   return {
     display: 'inline-block',
     position: 'relative',

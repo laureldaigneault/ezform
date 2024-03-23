@@ -1,6 +1,5 @@
 import { Modal as BaseModal, ModalProps as BaseModalProps } from '@mui/base';
-import { BaseComponentProps, BaseComponentWithChildrenProps } from '../../utils/types';
-import { withField } from '../Field';
+import { BaseComponentWithChildrenProps } from '../../utils/types';
 import styled from 'styled-components';
 import clsx from 'clsx';
 import { FC, ReactNode } from 'react';
@@ -13,7 +12,7 @@ const Backdrop: FC<{ open?: boolean; className?: string }> = (props) => {
   return <div className={clsx({ 'base-Backdrop-open': open }, className)} {...other} />;
 };
 
-const Root = styled(BaseModal)<ModalProps>(({ theme, ...props }) => {
+const Root = styled(BaseModal)<ModalProps>(() => {
   return {
     position: 'fixed',
     zIndex: 1300,
@@ -24,7 +23,7 @@ const Root = styled(BaseModal)<ModalProps>(({ theme, ...props }) => {
   };
 });
 
-const StyledBackdrop = styled(Backdrop)<any>(({ theme, ...props }) => {
+const StyledBackdrop = styled(Backdrop)<any>(() => {
   return {
     zIndex: -1,
     position: 'fixed',
@@ -34,7 +33,7 @@ const StyledBackdrop = styled(Backdrop)<any>(({ theme, ...props }) => {
   };
 });
 
-const ModalContent = styled('div')<BaseComponentWithChildrenProps>(({ theme, ...props }) => {
+const ModalContent = styled('div')<BaseComponentWithChildrenProps>(({ theme }) => {
   return {
     position: 'relative',
     display: 'flex',

@@ -101,7 +101,3 @@ export default styled(Toast)<ToastProps>(({ theme, ...props }) => {
     },
   };
 });
-
-const SnackbarContent = styled('div')(({ theme, ...props }) => {
-  return {};
-});
