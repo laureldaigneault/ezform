@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/laureldaigneault/ezform/compare/v1.0.10...v1.0.11) (2024-03-23)
+
+
+### Bug Fixes
+
+* handlebar escaping ([3e5295d](https://github.com/laureldaigneault/ezform/commit/3e5295d426e14e44a6568959820929f310620697))
+
 ## [1.0.10](https://github.com/laureldaigneault/ezform/compare/v1.0.9...v1.0.10) (2024-03-23)
 
 
