@@ -2,7 +2,7 @@ import { InputThemeType, ThemeType, ShapeType } from './types';
 import { ThemeProvider } from 'styled-components';
 import { convertHexToRGB, getContrastText } from './contrast';
 import defaultInputTheme from './defaultInputTheme';
-import Handlebars from 'handlebars';
+import Handlebars from 'handlebars/dist/cjs/handlebars';
 import tinycolor from 'tinycolor2';
 import { cloneDeep } from 'lodash';
 
