@@ -25,11 +25,11 @@ const StyledIcon = styled('svg')<SquareParkingIconProps>(({ theme, ...props }) =
     transition: 'zoom .3s ease-in-out',
     width: '1em',
     minWidth: '1em',
-    fontSize: props.size && typeof props.size === 'string' ? props.size : props.size + 'px',
+    fontSize: props.size ? (typeof props.size === 'string' ? props.size : props.size + 'px') : 'inherit',
     color:
       props.color && typeof props.color === 'string'
-        ? (theme.palette as any)[props.color]
-          ? (theme.palette as any)[props.color]?.main?.color
+        ? (theme.palette?.color as any)[props.color]
+          ? (theme.palette.color as any)[props.color]?.hex
           : props.color
         : 'inherit',
     animation: props.spin ? `$fidgetSpin ${typeof props.spin === 'boolean' ? '1s' : props.spin} linear infinite` : '',
