@@ -1,4 +1,5 @@
 import { InputThemeType, ThemeType, ShapeType } from './types';
+import { ThemeProvider } from 'styled-components';
 import { convertHexToRGB, getContrastText } from './contrast';
 import defaultInputTheme from './defaultInputTheme';
 import Handlebars from 'handlebars';
@@ -189,4 +190,4 @@ const createTheme = (inputTheme: InputThemeType): ThemeType => {
 // Compiling default input theme into a usable default theme
 const defaultTheme = createTheme(defaultInputTheme);
 
-export { defaultTheme, createTheme, getContrastText };
+export { defaultTheme, createTheme, getContrastText, ThemeProvider };
