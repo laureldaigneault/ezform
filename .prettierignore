@@ -1,0 +1,7 @@
+node_modules
+.vscode
+public
+typescript-guide.ts
+lib
+dist
+*.mdx

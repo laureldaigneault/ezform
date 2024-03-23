@@ -1,0 +1,125 @@
+{
+  "name": "@laureldaigneault/ezform",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts*\"",
+    "lint:fix": "eslint \"src/**/*.ts*\" --fix",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}'",
+    "clean": "rimraf dist",
+    "build": "npm run clean && rollup -c",
+    "release": "semantic-release",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test": "jest",
+    "build:svg": "babel-node -x .ts -- ./src/icons/build/build.ts"
+  },
+  "author": "Laurel Daigneault",
+  "license": "ISC",
+  "peerDependencies": {
+    "@reduxjs/toolkit": ">=1.9.5",
+    "formik": ">=2.2.0",
+    "lodash": "^=4.17.20",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-redux": "^=8.1.2",
+    "react-router-dom": "^=6.0.0",
+    "@rollbar/react": "^=0.11.1",
+    "rollbar": "^=2.26.1"
+  },
+  "peerDependenciesMeta": {
+    "lodash": {
+      "optional": true
+    },
+    "@reduxjs/toolkit": {
+      "optional": true
+    },
+    "react-redux": {
+      "optional": true
+    },
+    "react-router-dom": {
+      "optional": true
+    },
+    "@mui/base": {
+      "optional": true
+    },
+    "styled-components": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/node": "^7.19.1",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-typescript": "^7.18.6",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/base": "^5.0.0-beta.38",
+    "@mui/system": "^5.15.12",
+    "styled-components": "^6.1.8",
+    "tinycolor2": "^1.6.0",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^9.0.1",
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.7",
+    "@semantic-release/npm": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.0",
+    "@types/react": "^17.0.50",
+    "@types/svgo": "^2.6.4",
+    "handlebars": "^4.7.8",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "babel-loader": "^8.2.5",
+    "clsx": "^1.2.1",
+    "date-fns": "^2.29.3",
+    "del": "^6.0.0",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-mdx": "^2.0.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-storybook": "^0.6.14",
+    "eslint-plugin-testing-library": "^5.9.1",
+    "jest": "^27.5.1",
+    "lint-staged": "^13.0.3",
+    "lodash": "^4.17.20",
+    "prettier": "^2.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-jss": "^10.9.2",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.16.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-dts": "^4.2.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "semantic-release": "^22.0.0",
+    "svgo": "^2.8.0",
+    "ts-dedent": "^2.2.0",
+    "ts-jest": "^27.1.5",
+    "@types/lodash": "^4.14.202",
+    "@types/tinycolor2": "^1.4.6",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4",
+    "use-debounce": "^8.0.4",
+    "zod": "^3.22.4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
