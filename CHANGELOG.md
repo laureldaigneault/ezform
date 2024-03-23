@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/laureldaigneault/ezform/compare/v1.0.8...v1.0.9) (2024-03-23)
+
+
+### Bug Fixes
+
+* compiled icon theme access ([606366c](https://github.com/laureldaigneault/ezform/commit/606366cb5a8c28fb86543aa2955f0fa7a2549294))
+
 ## [1.0.8](https://github.com/laureldaigneault/ezform/compare/v1.0.7...v1.0.8) (2024-03-23)
 
 
