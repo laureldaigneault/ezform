@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/laureldaigneault/ezform/compare/v1.0.2...v1.0.3) (2024-03-23)
+
+
+### Bug Fixes
+
+* color ([431d7a5](https://github.com/laureldaigneault/ezform/commit/431d7a5be27fe3d37ffef8cb864d63ed1f5102ea))
+
 ## [1.0.2](https://github.com/laureldaigneault/ezform/compare/v1.0.1...v1.0.2) (2024-03-23)
 
 
