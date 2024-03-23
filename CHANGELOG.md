@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/laureldaigneault/ezform/compare/v1.0.14...v1.0.15) (2024-03-23)
+
+
+### Bug Fixes
+
+* exports ([2f978e4](https://github.com/laureldaigneault/ezform/commit/2f978e4bef91976a38595fb689509e6b2e548759))
+
 ## [1.0.14](https://github.com/laureldaigneault/ezform/compare/v1.0.13...v1.0.14) (2024-03-23)
 
 
