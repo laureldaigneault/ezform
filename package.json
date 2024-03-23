@@ -13,7 +13,7 @@
     "release": "semantic-release",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "build:svg": "babel-node -x .ts -- ./src/icons/build/build.ts"
   },
   "author": "Laurel Daigneault",
