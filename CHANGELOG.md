@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/laureldaigneault/ezform/compare/v1.0.1...v1.0.2) (2024-03-23)
+
+
+### Bug Fixes
+
+* package visibility ([25757e1](https://github.com/laureldaigneault/ezform/commit/25757e1aeaa0ffd80b65b2fdbd229abea7b6d8d0))
+
 ## [1.0.1](https://github.com/laureldaigneault/ezform/compare/v1.0.0...v1.0.1) (2024-03-23)
 
 
