@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/laureldaigneault/ezform/compare/v1.0.4...v1.0.5) (2024-03-23)
+
+
+### Bug Fixes
+
+* missing themeprovider export ([a108e48](https://github.com/laureldaigneault/ezform/commit/a108e4851d60b323e9f9e344b0142364c0c30989))
+
 ## [1.0.4](https://github.com/laureldaigneault/ezform/compare/v1.0.3...v1.0.4) (2024-03-23)
 
 
