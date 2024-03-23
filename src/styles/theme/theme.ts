@@ -16,9 +16,9 @@ import { cloneDeep } from 'lodash';
 
 const replaceCurly = (input: InputThemeType): any => {
   const template1 = Handlebars.compile(JSON.stringify(input));
-  const res1 = template1(input);
+  const res1 = template1(input, { noEscape: true });
   const template2 = Handlebars.compile(res1);
-  return JSON.parse(template2(input));
+  return JSON.parse(template2(input, { noEscape: true }));
 };
 
 /**
