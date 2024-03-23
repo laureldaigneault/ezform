@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/laureldaigneault/ezform/compare/v1.0.5...v1.0.6) (2024-03-23)
+
+
+### Bug Fixes
+
+* handlebar cjs ([d139f8e](https://github.com/laureldaigneault/ezform/commit/d139f8eb258b0aee04c89242b21602547230b2a0))
+
 ## [1.0.5](https://github.com/laureldaigneault/ezform/compare/v1.0.4...v1.0.5) (2024-03-23)
 
 
