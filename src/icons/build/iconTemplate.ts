@@ -1,6 +1,6 @@
 export default function iconTemplate({ componentName, height, width, viewBox, svgPaths, name, globalFill }: any) {
   return `import React from 'react';
-import { useStyles, ThemeType } from 'styles';
+  import styled from 'styled-components';
 
 export interface CustomProps {
   /** Makes the icon spin. Provide a boolean to use the default spin speed of 1.5s. Or provide a string to set a custom spin speed */
@@ -16,10 +16,10 @@ export interface CustomProps {
 // This type definition is to introduce our custom props so that they will be documented in storybook */
 export type ${componentName}Props = CustomProps & import('react').ComponentPropsWithoutRef<'svg'>;
 
-const styles = (theme: ThemeType) => ({
-  svg: (props: ${componentName}Props) => ({
+const StyledIcon = styled('svg')<${componentName}Props>(({ theme, ...props }) => {
+  return {
     userSelect: 'none',
-    cursor: props.onClick ? 'pointer' : null,
+    cursor: props.onClick ? 'pointer' : 'default',
     position: 'relative',
     height: '1em',
     minHeight: '1em',
@@ -34,28 +34,26 @@ const styles = (theme: ThemeType) => ({
           : props.color
         : 'inherit',
     animation: props.spin ? \`$fidgetSpin \${typeof props.spin === 'boolean' ? '1s' : props.spin} linear infinite\` : '',
-    transform: props.rotate ? \`rotate(\${props.rotate})\` : ''
-  }),
-  '@keyframes fidgetSpin': {
-    from: { transform: 'rotate(0deg)' },
-    to: { transform: 'rotate(360deg)' },
-  },
-});
-
+    transform: props.rotate ? \`rotate(\${props.rotate})\` : '',
+    '@keyframes fidgetSpin': {
+      from: { transform: 'rotate(0deg)' },
+      to: { transform: 'rotate(360deg)' },
+    },
+  }
+})
 export default function ${componentName}({ className = '', ...props }: ${componentName}Props): React.ReactElement {
-  const classes = useStyles(styles, props);
 
   return (
-    <svg
+    <StyledIcon
       ${viewBox ? `viewBox='${viewBox}'` : ''}
       {...props}
-      className={\`laureldaigneault laureldaigneault-${name} \${classes.svg} \${className}\`}
+      className={\`\${className}\`}
       preserveAspectRatio={'xMidYMid meet'}
       ${globalFill ? globalFill : ''}>
       <g>
         ${svgPaths}
       </g>
-    </svg>
+    </StyledIcon>
   );
 }
 `;
