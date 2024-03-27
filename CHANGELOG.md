@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/laureldaigneault/ezform/compare/v1.0.17...v1.0.18) (2024-03-27)
+
+
+### Bug Fixes
+
+* dependency ([962d00e](https://github.com/laureldaigneault/ezform/commit/962d00ec38fb9e1b9bd8d8b320173a2b52cc071b))
+
 ## [1.0.17](https://github.com/laureldaigneault/ezform/compare/v1.0.16...v1.0.17) (2024-03-27)
 
 
