@@ -71,7 +71,7 @@ export type FormProps = {
     fields: Record<string, any>;
   }) => Promise<void>;
   hold?: boolean;
-  children: ReactNode;
+  children: ReactNode | ((formContext: FormContextType) => ReactNode);
 };
 export type FormFieldType = {
   required: boolean;
@@ -356,7 +356,11 @@ export const Form = forwardRef<any, FormProps>(
       if (parentRef) (parentRef as any).current = contextValue;
     }, [JSON.stringify(contextValue || {})]);
 
-    return <FormContext.Provider value={contextValue}>{children}</FormContext.Provider>;
+    return (
+      <FormContext.Provider value={contextValue}>
+        {typeof children === 'function' ? children(contextValue) : children}
+      </FormContext.Provider>
+    );
   }
 );
 
