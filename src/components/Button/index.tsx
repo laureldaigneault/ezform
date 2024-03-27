@@ -13,7 +13,7 @@ const RootButton: FC<ButtonProps> = (props) => {
       {...props}
       disabled={props.disabled || submitting}
       {...(props.type === 'submit' ? { onClick: () => submitForm() } : {})}>
-      {submitting ? 'Loading...' : props.children}
+      {props.type === 'submit' && submitting ? 'Loading...' : props.children}
     </BaseButton>
   );
 };

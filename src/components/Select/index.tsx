@@ -49,8 +49,7 @@ const SelectButton = styled('button')<SelectProps>(({ theme, ...props }) => {
     ...(props.error
       ? {
           backgroundColor: theme.getColor('bad', { lighten: 50 }).hex,
-          borderColor: theme.getColor('bad').hex,
-          color: theme.getColor('bad').hex,
+          ...theme.getBorderStyle('field', 'bad'),
         }
       : {}),
   };
