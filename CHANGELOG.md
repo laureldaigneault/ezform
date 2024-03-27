@@ -1,3 +1,10 @@
+## [1.0.19](https://github.com/laureldaigneault/ezform/compare/v1.0.18...v1.0.19) (2024-03-27)
+
+
+### Bug Fixes
+
+* button props ([fe00284](https://github.com/laureldaigneault/ezform/commit/fe00284aeb5d79d6497f2f3ec9c42fd940b0893e))
+
 ## [1.0.18](https://github.com/laureldaigneault/ezform/compare/v1.0.17...v1.0.18) (2024-03-27)
 
 
