@@ -1,3 +1,10 @@
+## [1.0.22](https://github.com/laureldaigneault/ezform/compare/v1.0.21...v1.0.22) (2024-03-27)
+
+
+### Bug Fixes
+
+* required was requiring unregistered fields even after unmount ([aeae6ce](https://github.com/laureldaigneault/ezform/commit/aeae6ceaa5f7e258b3ef2a79f58103c82da3deff))
+
 ## [1.0.21](https://github.com/laureldaigneault/ezform/compare/v1.0.20...v1.0.21) (2024-03-27)
 
 
