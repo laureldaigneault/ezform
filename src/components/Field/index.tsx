@@ -318,7 +318,7 @@ export const Form = forwardRef<any, FormProps>(
 
         setSubmitting(false);
       },
-      [initialValues, submitting, onSubmit]
+      [initialValues, submitting, onSubmit, validateForm]
     );
 
     /**
