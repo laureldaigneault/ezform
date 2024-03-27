@@ -195,8 +195,10 @@ export const Form = forwardRef<any, FormProps>(
         const { touch } = options;
         const allRequiredFields: Record<string, true> = {};
         const flattenedFields = Object.entries(fields).reduce((acc, [k, v]) => {
-          if (v.required) allRequiredFields[k] = true;
-          if (v._registered) acc[k] = v.value;
+          if (v._registered) {
+            if (v.required) allRequiredFields[k] = true;
+            acc[k] = v.value;
+          }
           return acc;
         }, {} as Record<string, any>);
 
