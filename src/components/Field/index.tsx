@@ -300,7 +300,7 @@ export const Form = forwardRef<any, FormProps>(
         }) => void
       ) => {
         if (submitting) {
-          console.warn('Cannot submit a form while is it already submitting.');
+          console.warn('Cannot submit a form while is it already submitting');
           return;
         }
         setSubmitting(true);
