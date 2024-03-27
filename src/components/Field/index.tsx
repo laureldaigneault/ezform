@@ -23,6 +23,7 @@ import { cloneDeep, get } from 'lodash';
 
 // Context
 export type FormContextType = {
+  hold?: boolean;
   fields: Record<string, FormFieldType>;
   registerField: (name: string, field: Partial<FormFieldType>) => void;
   reregisterField: (name: string) => void;
@@ -32,17 +33,19 @@ export type FormContextType = {
   resetForm: () => void;
   clearForm: () => void;
   submitForm: (
-    submitHandler: (args: {
+    submitHandler?: (args: {
       valid?: boolean;
       errors: Record<string, string | null | undefined> | null | undefined;
-      fields: Record<string, FormFieldType>;
+      fields: Record<string, any>;
     }) => Promise<void>
   ) => void;
+  isFieldRegistered: (fieldName: string) => boolean;
   submitting: boolean;
   valid?: boolean;
   errors?: Record<string, string | null | undefined> | null | undefined;
 };
 const defaultContext: FormContextType = {
+  hold: false,
   fields: {},
   registerField: (a) => a,
   reregisterField: (b) => b,
@@ -52,6 +55,7 @@ const defaultContext: FormContextType = {
   resetForm: () => true,
   clearForm: () => true,
   submitForm: () => true,
+  isFieldRegistered: (a) => false,
   submitting: false,
   valid: undefined,
   errors: undefined,
@@ -61,6 +65,12 @@ export const FormContext = createContext<FormContextType>(defaultContext);
 export type FormProps = {
   initialValues?: any;
   schema: ZodObject<any>;
+  onSubmit?: (args: {
+    valid?: boolean;
+    errors: Record<string, string | null | undefined> | null | undefined;
+    fields: Record<string, any>;
+  }) => Promise<void>;
+  hold?: boolean;
   children: ReactNode;
 };
 export type FormFieldType = {
@@ -79,251 +89,276 @@ export const useFormState = () => useContext<FormContextType>(FormContext);
  * Each nested Fields will register to it.
  * @param initialValues
  */
-export const Form = forwardRef<any, FormProps>(({ initialValues = {}, schema, children }, parentRef) => {
-  const [fields, setFields] = useState<Record<string, FormFieldType>>({});
-  const [submitting, setSubmitting] = useState<boolean>(false);
-  /**
-   * Registers a field into the form state. This method is typically
-   * called from the Field component, on mount.
-   */
-  const registerField = useCallback((name: string, field: Partial<FormFieldType> = {}) => {
-    setFields((_prev) => {
-      return {
-        ..._prev,
-        [name]: {
-          required: false,
-          touched: !!initialValues[name],
-          value: initialValues[name] ?? undefined,
-          originalValue: field.value ?? undefined,
-          error: false,
-          errorMessage: null,
-          ...field,
-          _registered: true,
-        },
-      };
-    });
-  }, []);
+export const Form = forwardRef<any, FormProps>(
+  ({ initialValues = {}, schema, onSubmit, hold, children }, parentRef) => {
+    const [fields, setFields] = useState<Record<string, FormFieldType>>({});
+    const [submitting, setSubmitting] = useState<boolean>(false);
+    /**
+     * Registers a field into the form state. This method is typically
+     * called from the Field component, on mount.
+     */
+    const registerField = useCallback((name: string, field: Partial<FormFieldType> = {}) => {
+      setFields((_prev) => {
+        return {
+          ..._prev,
+          [name]: {
+            required: false,
+            touched: !!initialValues[name],
+            value: initialValues[name] ?? undefined,
+            originalValue: field.value ?? undefined,
+            error: false,
+            errorMessage: null,
+            ...field,
+            _registered: true,
+          },
+        };
+      });
+    }, []);
 
-  /**
-   * Re-registers a previously registered field. The difference lies in the fact that it
-   * will not set default values, it will only switch back the _registered flag to true.
-   */
-  const reregisterField = useCallback((name: string) => {
-    setFields((_prev) => {
-      return {
-        ..._prev,
-        [name]: {
-          ...(_prev[name] || {}),
-          _registered: true,
-        },
-      };
-    });
-  }, []);
+    /**
+     * Re-registers a previously registered field. The difference lies in the fact that it
+     * will not set default values, it will only switch back the _registered flag to true.
+     */
+    const reregisterField = useCallback((name: string) => {
+      setFields((_prev) => {
+        return {
+          ..._prev,
+          [name]: {
+            ...(_prev[name] || {}),
+            _registered: true,
+          },
+        };
+      });
+    }, []);
 
-  /**
-   * Unregisters a field from the form state. This method is typically
-   * called from the Field component, before unmounting.
-   */
-  const unregisterField = useCallback((name: string) => {
-    setFields((_prev) => {
-      return {
-        ..._prev,
-        [name]: {
-          ...(_prev[name] || {}),
-          _registered: false,
-        },
-      };
-    });
-  }, []);
+    /**
+     * Unregisters a field from the form state. This method is typically
+     * called from the Field component, before unmounting.
+     */
+    const unregisterField = useCallback((name: string) => {
+      setFields((_prev) => {
+        return {
+          ..._prev,
+          [name]: {
+            ...(_prev[name] || {}),
+            _registered: false,
+          },
+        };
+      });
+    }, []);
 
-  /**
-   * Updates the data of a form field
-   */
-  const updateField = useCallback((name: string, field: Partial<FormFieldType> = {}) => {
-    setFields((_prev) => {
-      return {
-        ..._prev,
-        [name]: {
-          ...(_prev[name] || {}),
-          ...field,
-        },
-      };
-    });
-  }, []);
+    /**
+     * Checks if a field is registered and returns a boolean value
+     */
+    const isFieldRegistered = useCallback(
+      (name: string) => {
+        return fields[name]?._registered === true;
+      },
+      [fields]
+    );
 
-  /**
-   * Check if form is valid, and returns result
-   */
-  const isFormValid = useCallback((_fields: Record<string, FormFieldType> = {}) => {
-    const errors = Object.entries(_fields).reduce((acc, [k, v]) => {
-      if (v.error) acc[k] = v.errorMessage;
-      return acc;
-    }, {} as Record<string, string | null | undefined>);
-    const valid = Object.keys(errors).length === 0;
-    return {
+    /**
+     * Updates the data of a form field
+     */
+    const updateField = useCallback((name: string, field: Partial<FormFieldType> = {}) => {
+      setFields((_prev) => {
+        return {
+          ..._prev,
+          [name]: {
+            ...(_prev[name] || {}),
+            ...field,
+          },
+        };
+      });
+    }, []);
+
+    /**
+     * Check if form is valid, and returns result
+     */
+    const isFormValid = useCallback((_fields: Record<string, FormFieldType> = {}) => {
+      const errors = Object.entries(_fields).reduce((acc, [k, v]) => {
+        if (v.error) acc[k] = v.errorMessage;
+        return acc;
+      }, {} as Record<string, string | null | undefined>);
+      const valid = Object.keys(errors).length === 0;
+      return {
+        valid,
+        errors,
+      };
+    }, []);
+
+    /**
+     * Validate the form
+     */
+    const validateForm = useCallback(
+      (options: { touch?: boolean } = {}) => {
+        const { touch } = options;
+        const allRequiredFields: Record<string, true> = {};
+        const flattenedFields = Object.entries(fields).reduce((acc, [k, v]) => {
+          if (v.required) allRequiredFields[k] = true;
+          if (v._registered) acc[k] = v.value;
+          return acc;
+        }, {} as Record<string, any>);
+
+        // Testing schema
+        const validationResult = schema.partial().required(allRequiredFields).safeParse(flattenedFields);
+        const erroredFieldKeys: Record<string, string> = {};
+        if (!validationResult.success) {
+          (validationResult.error.issues || []).forEach((issue) => {
+            const { path, message } = issue;
+            erroredFieldKeys[(path || []).join('.')] = message;
+          });
+        }
+
+        // setFields((_prev) => {
+        const updatedFields = Object.entries(cloneDeep(fields)).reduce((acc, [k, v]) => {
+          acc[k] = erroredFieldKeys[k]
+            ? {
+                ...v,
+                error: true,
+                errorMessage: erroredFieldKeys[k],
+                ...(touch ? { touched: true } : {}),
+              }
+            : {
+                ...v,
+                error: false,
+                errorMessage: null,
+                ...(touch ? { touched: true } : {}),
+              };
+          return acc;
+        }, {} as Record<string, FormFieldType>);
+        setFields(updatedFields);
+        const { valid, errors } = isFormValid(updatedFields);
+
+        const simpleFields = Object.entries(updatedFields).reduce((acc, [k, v]) => {
+          acc[k] = v.value;
+          return acc;
+        }, {} as Record<string, any>);
+
+        return {
+          fields: simpleFields,
+          valid,
+          errors,
+        };
+        // });
+      },
+      [schema, fields]
+    );
+
+    /**
+     * Resets the form to it's original values, set via
+     * the initialValues prop on mount
+     */
+    const resetForm = useCallback(() => {
+      setFields((_prev) => {
+        return Object.entries(_prev).reduce((acc, [k, v]) => {
+          acc[k] = {
+            ...v,
+            touched: !!v.originalValue,
+            value: v.originalValue ?? undefined,
+            error: false,
+            errorMessage: null,
+          };
+          return acc;
+        }, {} as Record<string, FormFieldType>);
+      });
+    }, [initialValues]);
+
+    /**
+     * Clears the form by setting all field values to undefined,
+     * touched to false and clearing all errors. Note that this
+     * does not clear the originalValue property, so the form
+     * can still be resetted after being cleared
+     */
+    const clearForm = useCallback(() => {
+      setFields((_prev) => {
+        return Object.entries(_prev).reduce((acc, [k, v]) => {
+          acc[k] = {
+            ...v,
+            touched: false,
+            value: undefined,
+            error: false,
+            errorMessage: null,
+          };
+          return acc;
+        }, {} as Record<string, FormFieldType>);
+      });
+    }, [initialValues]);
+
+    /**
+     * Triggers the action of "submitting" the form, which involves:
+     * 1. validating all fields
+     * 2. setting all fields as "touched"
+     * 3. returning "valid" and "errors" properties for easy access
+     */
+    const submitForm = useCallback(
+      async (
+        submitHandler?: (args: {
+          valid?: boolean;
+          errors: Record<string, string | null | undefined> | null | undefined;
+          fields: Record<string, FormFieldType>;
+        }) => void
+      ) => {
+        if (submitting) {
+          console.warn('Cannot submit a form while is it already submitting.');
+          return;
+        }
+        setSubmitting(true);
+        const { valid, errors, fields: _fields } = validateForm({ touch: true });
+        const handlerParams = {
+          valid,
+          errors,
+          fields: _fields,
+        };
+        if (submitHandler) {
+          await submitHandler(handlerParams);
+        } else if (onSubmit) {
+          await onSubmit(handlerParams);
+        }
+
+        setSubmitting(false);
+      },
+      [initialValues, submitting, onSubmit]
+    );
+
+    /**
+     * Memoized "valid" and "errors" property to make it
+     * accessible on form context. This also conveniently triggers
+     * the validation, so we don't need a separate useEffect
+     */
+    const { valid, errors } = useMemo(() => validateForm(), [JSON.stringify(fields || {})]);
+
+    /**
+     * Context value to pass to context provider
+     * and parent ref
+     */
+    const contextValue = {
+      hold,
+      fields,
+      registerField,
+      reregisterField,
+      unregisterField,
+      isFieldRegistered,
+      updateField,
+      validateForm,
+      resetForm,
+      clearForm,
+      submitForm,
+      submitting,
       valid,
       errors,
     };
-  }, []);
 
-  /**
-   * Validate the form
-   */
-  const validateForm = useCallback(
-    (options: { touch?: boolean } = {}) => {
-      const { touch } = options;
-      const allRequiredFields: Record<string, true> = {};
-      const flattenedFields = Object.entries(fields).reduce((acc, [k, v]) => {
-        if (v.required) allRequiredFields[k] = true;
-        if (v._registered) acc[k] = v.value;
-        return acc;
-      }, {} as Record<string, any>);
+    /**
+     * Validate form on change
+     */
+    useEffect(() => {
+      if (parentRef) (parentRef as any).current = contextValue;
+    }, [JSON.stringify(contextValue || {})]);
 
-      // Testing schema
-      const validationResult = schema.partial().required(allRequiredFields).safeParse(flattenedFields);
-      const erroredFieldKeys: Record<string, string> = {};
-      if (!validationResult.success) {
-        (validationResult.error.issues || []).forEach((issue) => {
-          const { path, message } = issue;
-          erroredFieldKeys[(path || []).join('.')] = message;
-        });
-      }
-
-      // setFields((_prev) => {
-      const updatedFields = Object.entries(cloneDeep(fields)).reduce((acc, [k, v]) => {
-        acc[k] = erroredFieldKeys[k]
-          ? {
-              ...v,
-              error: true,
-              errorMessage: erroredFieldKeys[k],
-              ...(touch ? { touched: true } : {}),
-            }
-          : {
-              ...v,
-              error: false,
-              errorMessage: null,
-              ...(touch ? { touched: true } : {}),
-            };
-        return acc;
-      }, {} as Record<string, FormFieldType>);
-      setFields(updatedFields);
-      const { valid, errors } = isFormValid(updatedFields);
-
-      return {
-        fields: updatedFields,
-        valid,
-        errors,
-      };
-      // });
-    },
-    [schema, fields]
-  );
-
-  /**
-   * Resets the form to it's original values, set via
-   * the initialValues prop on mount
-   */
-  const resetForm = useCallback(() => {
-    setFields((_prev) => {
-      return Object.entries(_prev).reduce((acc, [k, v]) => {
-        acc[k] = {
-          ...v,
-          touched: !!v.originalValue,
-          value: v.originalValue ?? undefined,
-          error: false,
-          errorMessage: null,
-        };
-        return acc;
-      }, {} as Record<string, FormFieldType>);
-    });
-  }, [initialValues]);
-
-  /**
-   * Clears the form by setting all field values to undefined,
-   * touched to false and clearing all errors. Note that this
-   * does not clear the originalValue property, so the form
-   * can still be resetted after being cleared
-   */
-  const clearForm = useCallback(() => {
-    setFields((_prev) => {
-      return Object.entries(_prev).reduce((acc, [k, v]) => {
-        acc[k] = {
-          ...v,
-          touched: false,
-          value: undefined,
-          error: false,
-          errorMessage: null,
-        };
-        return acc;
-      }, {} as Record<string, FormFieldType>);
-    });
-  }, [initialValues]);
-
-  /**
-   * Triggers the action of "submitting" the form, which involves:
-   * 1. validating all fields
-   * 2. setting all fields as "touched"
-   * 3. returning "valid" and "errors" properties for easy access
-   */
-  const submitForm = useCallback(
-    async (
-      submitHandler: (args: {
-        valid?: boolean;
-        errors: Record<string, string | null | undefined> | null | undefined;
-        fields: Record<string, FormFieldType>;
-      }) => void
-    ) => {
-      if (submitting) {
-        console.warn('Cannot submit a form while is it already submitting.');
-        return;
-      }
-      setSubmitting(true);
-      const { valid, errors, fields: _fields } = validateForm({ touch: true });
-      await submitHandler({
-        valid,
-        errors,
-        fields: _fields,
-      });
-      setSubmitting(false);
-    },
-    [initialValues, submitting]
-  );
-
-  /**
-   * Memoized "valid" and "errors" property to make it
-   * accessible on form context. This also conveniently triggers
-   * the validation, so we don't need a separate useEffect
-   */
-  const { valid, errors } = useMemo(() => validateForm(), [JSON.stringify(fields || {})]);
-
-  /**
-   * Context value to pass to context provider
-   * and parent ref
-   */
-  const contextValue = {
-    fields,
-    registerField,
-    reregisterField,
-    unregisterField,
-    updateField,
-    validateForm,
-    resetForm,
-    clearForm,
-    submitForm,
-    submitting,
-    valid,
-    errors,
-  };
-
-  /**
-   * Validate form on change
-   */
-  useEffect(() => {
-    if (parentRef) (parentRef as any).current = contextValue;
-  }, [JSON.stringify(contextValue || {})]);
-
-  return <FormContext.Provider value={contextValue}>{children}</FormContext.Provider>;
-});
+    return <FormContext.Provider value={contextValue}>{children}</FormContext.Provider>;
+  }
+);
 
 // Context
 export type FieldContextType = {
@@ -353,18 +388,19 @@ export type FieldProps = {
  */
 export const Field: FC<FieldProps> = ({ name, children, inline, intent, ...fieldOptions }) => {
   const formCtx = useContext(FormContext);
-  const { registerField, unregisterField, updateField, fields } = formCtx;
+  const { registerField, unregisterField, updateField, fields, isFieldRegistered, hold } = formCtx;
   const field = useMemo(() => fields[name], [fields, name]);
 
   useEffect(() => {
+    if (hold || isFieldRegistered(name)) return;
     registerField(name, fieldOptions || {});
     return () => unregisterField(name);
-  }, []);
+  }, [hold]);
 
   useEffect(() => {
-    if (!field || !field._registered) return;
+    if (!field || !field._registered || hold) return;
     updateField(name, fieldOptions || {});
-  }, [field?._registered, fieldOptions?.required]);
+  }, [hold, field?._registered, fieldOptions?.required]);
 
   /**
    * Sets a field's "touched" property
@@ -479,3 +515,16 @@ export const withField: WithFieldFunctionType = (C, config = {}) => {
     return <C {...augmentedProps} />;
   };
 };
+
+/*
+
+<EZProvider>
+  ...
+  const { Form, submitting... } = useForm('form-name');
+  <Form>
+    <Field />
+  </Form
+</EZProvider>
+
+
+*/

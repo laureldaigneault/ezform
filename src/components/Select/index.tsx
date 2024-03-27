@@ -45,6 +45,14 @@ const SelectButton = styled('button')<SelectProps>(({ theme, ...props }) => {
     [`&.${selectClasses.disabled}`]: {
       ...theme.getActionStyle('disabled'),
     },
+
+    ...(props.error
+      ? {
+          backgroundColor: theme.getColor('bad', { lighten: 50 }).hex,
+          borderColor: theme.getColor('bad').hex,
+          color: theme.getColor('bad').hex,
+        }
+      : {}),
   };
 });
 

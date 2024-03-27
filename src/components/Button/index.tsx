@@ -7,9 +7,12 @@ import { styled } from '../../styles/theme';
 export type ButtonProps = BaseButtonProps & BaseComponentProps;
 
 const RootButton: FC<ButtonProps> = (props) => {
-  const { submitting } = useFormState();
+  const { submitting, submitForm } = useFormState();
   return (
-    <BaseButton {...props} disabled={props.disabled || submitting}>
+    <BaseButton
+      {...props}
+      disabled={props.disabled || submitting}
+      {...(props.type === 'submit' ? { onClick: () => submitForm() } : {})}>
       {submitting ? 'Loading...' : props.children}
     </BaseButton>
   );
