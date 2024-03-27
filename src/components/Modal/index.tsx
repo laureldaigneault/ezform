@@ -5,7 +5,13 @@ import clsx from 'clsx';
 import { FC, ReactNode } from 'react';
 
 export type ModalProps = BaseModalProps &
-  BaseComponentWithChildrenProps & { title?: string; description?: string; actions?: ReactNode };
+  BaseComponentWithChildrenProps & {
+    title?: string;
+    description?: string;
+    actions?: ReactNode;
+    contentClassName?: string;
+    contentStyle?: any;
+  };
 
 const Backdrop: FC<{ open?: boolean; className?: string }> = (props) => {
   const { open, className, ...other } = props;
@@ -70,10 +76,10 @@ const ModalContent = styled('div')<BaseComponentWithChildrenProps>(({ theme }) =
   };
 });
 
-export const Modal = (props: ModalProps) => {
+export const Modal = ({ contentClassName, contentStyle, ...props }: ModalProps) => {
   return (
     <Root slots={{ backdrop: StyledBackdrop }} {...props}>
-      <ModalContent>
+      <ModalContent className={contentClassName} style={contentStyle}>
         <h1>{props.title}</h1>
         <h2>{props.description}</h2>
         {props.children}
