@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/laureldaigneault/ezform/compare/v1.0.16...v1.0.17) (2024-03-27)
+
+
+### Bug Fixes
+
+* function signature ([9d73ebe](https://github.com/laureldaigneault/ezform/commit/9d73ebe6be26f359f641307f3f5ff2f36649f8ec))
+
 ## [1.0.16](https://github.com/laureldaigneault/ezform/compare/v1.0.15...v1.0.16) (2024-03-27)
 
 
