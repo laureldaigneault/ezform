@@ -1,3 +1,10 @@
+## [1.0.20](https://github.com/laureldaigneault/ezform/compare/v1.0.19...v1.0.20) (2024-03-27)
+
+
+### Bug Fixes
+
+* add children as fct option ([420b6f1](https://github.com/laureldaigneault/ezform/commit/420b6f182911062c3af6b7dbf68da73d28823945))
+
 ## [1.0.19](https://github.com/laureldaigneault/ezform/compare/v1.0.18...v1.0.19) (2024-03-27)
 
 
