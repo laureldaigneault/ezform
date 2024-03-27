@@ -34,14 +34,14 @@ export type FormContextType = {
   clearForm: () => void;
   submitForm: (
     submitHandler?: (args: {
-      valid?: boolean;
+      valid: boolean;
       errors: Record<string, string | null | undefined> | null | undefined;
       fields: Record<string, any>;
     }) => Promise<void>
   ) => void;
   isFieldRegistered: (fieldName: string) => boolean;
   submitting: boolean;
-  valid?: boolean;
+  valid: boolean;
   errors?: Record<string, string | null | undefined> | null | undefined;
 };
 const defaultContext: FormContextType = {
@@ -57,7 +57,7 @@ const defaultContext: FormContextType = {
   submitForm: () => true,
   isFieldRegistered: (a) => false,
   submitting: false,
-  valid: undefined,
+  valid: false,
   errors: undefined,
 };
 export const FormContext = createContext<FormContextType>(defaultContext);
@@ -66,7 +66,7 @@ export type FormProps = {
   initialValues?: any;
   schema: ZodObject<any>;
   onSubmit?: (args: {
-    valid?: boolean;
+    valid: boolean;
     errors: Record<string, string | null | undefined> | null | undefined;
     fields: Record<string, any>;
   }) => Promise<void>;
@@ -294,7 +294,7 @@ export const Form = forwardRef<any, FormProps>(
     const submitForm = useCallback(
       async (
         submitHandler?: (args: {
-          valid?: boolean;
+          valid: boolean;
           errors: Record<string, string | null | undefined> | null | undefined;
           fields: Record<string, FormFieldType>;
         }) => void
