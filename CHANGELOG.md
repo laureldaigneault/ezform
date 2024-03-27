@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/laureldaigneault/ezform/compare/v1.0.15...v1.0.16) (2024-03-27)
+
+
+### Bug Fixes
+
+* field context ([f95962c](https://github.com/laureldaigneault/ezform/commit/f95962c6951d05c9219db3fb21c5e387178a4a2e))
+
 ## [1.0.15](https://github.com/laureldaigneault/ezform/compare/v1.0.14...v1.0.15) (2024-03-23)
 
 
