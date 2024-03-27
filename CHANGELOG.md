@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/laureldaigneault/ezform/compare/v1.0.20...v1.0.21) (2024-03-27)
+
+
+### Bug Fixes
+
+* modal ([d690845](https://github.com/laureldaigneault/ezform/commit/d6908457c7b4f624de4b8b43552389b2735b3179))
+
 ## [1.0.20](https://github.com/laureldaigneault/ezform/compare/v1.0.19...v1.0.20) (2024-03-27)
 
 
