@@ -1,3 +1,11 @@
+## [1.0.29](https://github.com/laureldaigneault/ezform/compare/v1.0.28...v1.0.29) (2024-04-01)
+
+
+### Bug Fixes
+
+* cloee ([c39af0b](https://github.com/laureldaigneault/ezform/commit/c39af0b57dc89c25d6275c8b6d518ae3a8a96d34))
+* something ([134130b](https://github.com/laureldaigneault/ezform/commit/134130bca91e14916fac5a096ec8926e4f058505))
+
 ## [1.0.28](https://github.com/laureldaigneault/ezform/compare/v1.0.27...v1.0.28) (2024-04-01)
 
 
