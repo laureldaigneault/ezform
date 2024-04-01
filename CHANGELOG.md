@@ -1,3 +1,13 @@
+## [1.0.27](https://github.com/laureldaigneault/ezform/compare/v1.0.26...v1.0.27) (2024-04-01)
+
+
+### Bug Fixes
+
+* arrow pplacement ([433a9fa](https://github.com/laureldaigneault/ezform/commit/433a9fa8973779fe8653eec8254e94d7384c232c))
+* lock ([ba99f87](https://github.com/laureldaigneault/ezform/commit/ba99f8776e4ce615a3503e5ec30b6cf15f6a8711))
+* popup ([3da683e](https://github.com/laureldaigneault/ezform/commit/3da683e0edaab51cdc1181dfce1eb7bec6bed6c0))
+* tsting lib ([9599263](https://github.com/laureldaigneault/ezform/commit/95992638591a544e9e6d77dceaa09936da55b796))
+
 ## [1.0.26](https://github.com/laureldaigneault/ezform/compare/v1.0.25...v1.0.26) (2024-04-01)
 
 
