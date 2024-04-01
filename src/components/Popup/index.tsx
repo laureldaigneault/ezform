@@ -72,8 +72,8 @@ const Root = styled('div')<PopupProps>(({ theme, animated, placement = '', color
 });
 
 const Arrow = styled('div')((props: any) => {
-  const arrowOffsetY = 50;
-  const arrowOffsetX = 40;
+  const arrowOffsetY = 30;
+  const arrowOffsetX = 30;
   const baseArrowStyles = {
     height: '30px',
     border: 'solid 15px transparent',
