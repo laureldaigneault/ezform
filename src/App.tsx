@@ -6,8 +6,10 @@ const App: FC = () => {
   return (
     <div>
       <Button>asdfads</Button>
-      <p id='testid'>asd fasd fad </p>
-      <Popup open placement='bottom-end' anchorId='testid'>
+      <p style={{ marginLeft: '600px', marginTop: '300px', width: '100px', backgroundColor: 'red' }} id='testid'>
+        asd fasd fad{' '}
+      </p>
+      <Popup open placement='right-start' anchorId='testid' animated color='secondary'>
         I am a popup
       </Popup>
     </div>
