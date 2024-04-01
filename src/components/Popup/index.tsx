@@ -11,6 +11,7 @@ const RootPopup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, ...re
     if (anchorRef) return anchorRef?.current;
     if (anchorId) return document.getElementById(anchorId);
   }, [anchorRef, anchorId]);
+
   const [side, align] = (rest.placement || '').split('-');
   return (
     <BasePopup {...rest} anchor={memoizedAnchor}>
