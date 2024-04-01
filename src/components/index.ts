@@ -7,6 +7,7 @@ export * from './Label';
 export * from './Menu';
 export * from './Modal';
 export * from './NumberInput';
+export * from './Popup';
 export * from './Select';
 export * from './Switch';
 export * from './Toast';

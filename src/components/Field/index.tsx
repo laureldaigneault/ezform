@@ -55,7 +55,7 @@ const defaultContext: FormContextType = {
   resetForm: () => true,
   clearForm: () => true,
   submitForm: () => true,
-  isFieldRegistered: (a) => false,
+  isFieldRegistered: (a) => !!a,
   submitting: false,
   valid: false,
   errors: undefined,
