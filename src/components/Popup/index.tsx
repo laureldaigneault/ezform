@@ -6,7 +6,7 @@ import { styled } from '../../styles/theme';
 export type PopupProps = BasePopupProps &
   BaseComponentProps & { anchorRef?: any; anchorId?: string; animated?: boolean };
 
-const RootPopup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, ...rest }) => {
+const Popup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, ...rest }) => {
   const memoizedAnchor = useMemo(() => {
     if (anchorRef) return anchorRef?.current;
     if (anchorId) return document.getElementById(anchorId);
@@ -14,12 +14,46 @@ const RootPopup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, ...re
 
   const [side, align] = (rest.placement || '').split('-');
   return (
-    <BasePopup {...rest} anchor={memoizedAnchor}>
+    <BasePopup
+      {...rest}
+      anchor={memoizedAnchor}
+      slots={{ root: Root }}
+      slotProps={{ root: { ...rest, animated } as any }}>
       as dfsadfasfd
       <Arrow className={`${side ? `side-${side}-${align || 'center'}` : ''} ${animated ? 'animated' : ''}`} />
     </BasePopup>
   );
 };
+
+const Root = styled('div')<PopupProps>(({ theme, animated, placement = '' }) => {
+  const isY = ['top', 'bottom'].includes(placement);
+  const isX = ['left', 'right'].includes(placement);
+  return {
+    position: 'relative',
+    minHeight: '100px',
+    width: '300px',
+    overflow: 'visible',
+    backgroundColor: theme.getColor('secondary').hex,
+    boxShadow: theme.getShadow('projection'),
+    padding: theme.getSpacing(2),
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    color: theme.getColor('celeste').hex,
+    lineHeight: '1.5rem',
+    ...(animated ? { animation: `${isY ? 'arrowAnimY' : isX ? 'arrowAnimX' : 'arrowAnimY'} 0.5s infinite` } : {}),
+
+    '@keyframes arrowAnimY': {
+      '0%': { top: '-3px' },
+      '50%': { top: '3px' },
+      '100%': { top: '-3px' },
+    },
+    '@keyframes arrowAnimX': {
+      '0%': { left: '-3px' },
+      '50%': { left: '3px' },
+      '100%': { left: '-3px' },
+    },
+  };
+});
 
 const Arrow = styled('div')((props: any) => {
   const arrowOffset = 26;
@@ -66,36 +100,6 @@ const Arrow = styled('div')((props: any) => {
         '&-center': { top: 'calc(50% - 15px)' },
         '&-end': { bottom: 20 },
       },
-    },
-  };
-});
-
-const Popup = styled(RootPopup)<PopupProps>(({ theme, animated, placement = '' }) => {
-  const isY = ['top', 'bottom'].includes(placement);
-  const isX = ['left', 'right'].includes(placement);
-  return {
-    position: 'relative',
-    minHeight: '100px',
-    width: '300px',
-    overflow: 'visible',
-    backgroundColor: theme.getColor('secondary').hex,
-    boxShadow: theme.getShadow('projection'),
-    padding: theme.getSpacing(2),
-    fontSize: '1.2rem',
-    fontWeight: 'bold',
-    color: theme.getColor('celeste').hex,
-    lineHeight: '1.5rem',
-    ...(animated ? { animation: `${isY ? 'arrowAnimY' : isX ? 'arrowAnimX' : 'arrowAnimY'} 0.5s infinite` } : {}),
-
-    '@keyframes arrowAnimY': {
-      '0%': { top: '-3px' },
-      '50%': { top: '3px' },
-      '100%': { top: '-3px' },
-    },
-    '@keyframes arrowAnimX': {
-      '0%': { left: '-3px' },
-      '50%': { left: '3px' },
-      '100%': { left: '-3px' },
     },
   };
 });
