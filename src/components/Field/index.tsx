@@ -474,11 +474,11 @@ export const Field: FC<FieldProps> = ({ name, children, inline, intent, ...field
  * HOC to tap into the callbacks and props of a component.
  */
 type WithFieldFunctionType = <T extends JSX.IntrinsicAttributes>(
-  C: FC<T & { context: FieldContextType }>,
+  C: FC<T & { context?: FieldContextType }>,
   config?: {
     map?: { value?: keyof T; onChange?: string; onFocus?: keyof T; onBlur?: keyof T; onClick?: keyof T };
   }
-) => FC<T>;
+) => FC<T & { _isolated?: boolean }>;
 export const withField: WithFieldFunctionType = (C, config = {}) => {
   const { map } = config;
   const {
@@ -491,6 +491,12 @@ export const withField: WithFieldFunctionType = (C, config = {}) => {
 
   return (props) => {
     const field = useField();
+
+    if (props._isolated) {
+      delete props._isolated;
+
+      return <C {...props} />;
+    }
     const [_onChangePropWithPotentialIndex, ...onChangePath] = _onChange.split('.');
     const [onChangeProp, onChangeArgIndex] = _onChangePropWithPotentialIndex.split(':');
     const augmentedProps = {
