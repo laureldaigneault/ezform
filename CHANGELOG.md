@@ -1,3 +1,10 @@
+## [1.0.24](https://github.com/laureldaigneault/ezform/compare/v1.0.23...v1.0.24) (2024-04-01)
+
+
+### Bug Fixes
+
+* popup ([fa8b0c2](https://github.com/laureldaigneault/ezform/commit/fa8b0c2894988d3677c8d9d6cf3aba696ba74e96))
+
 ## [1.0.23](https://github.com/laureldaigneault/ezform/compare/v1.0.22...v1.0.23) (2024-04-01)
 
 
