@@ -1,24 +1,21 @@
 import { Unstable_Popup as BasePopup, PopupProps as BasePopupProps } from '@mui/base';
 import { BaseComponentProps } from '../../utils/types';
-import { FC, useMemo } from 'react';
+import { FC, useLayoutEffect, useState } from 'react';
 import { styled } from '../../styles/theme';
 
 export type PopupProps = BasePopupProps &
   BaseComponentProps & { anchorRef?: any; anchorId?: string; animated?: boolean };
 
-const Popup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, ...rest }) => {
-  const memoizedAnchor = useMemo(() => {
-    if (anchorRef) return anchorRef?.current;
-    if (anchorId) return document.getElementById(anchorId);
-  }, [anchorRef, anchorId]);
+export const Popup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, ...rest }) => {
+  const [anchor, setAnchor] = useState<any>();
+  useLayoutEffect(() => {
+    if (anchorRef?.current) setAnchor(anchorRef.current);
+    if (anchorId) setAnchor(document.getElementById(anchorId));
+  }, [anchorId]);
 
   const [side, align] = (rest.placement || '').split('-');
   return (
-    <BasePopup
-      {...rest}
-      anchor={memoizedAnchor}
-      slots={{ root: Root }}
-      slotProps={{ root: { ...rest, animated } as any }}>
+    <BasePopup {...rest} anchor={anchor} slots={{ root: Root }} slotProps={{ root: { ...rest, animated } as any }}>
       as dfsadfasfd
       <Arrow className={`${side ? `side-${side}-${align || 'center'}` : ''} ${animated ? 'animated' : ''}`} />
     </BasePopup>

@@ -14,7 +14,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest --passWithNoTests",
-    "build:svg": "babel-node -x .ts -- ./src/icons/build/build.ts"
+    "build:svg": "babel-node -x .ts -- ./src/icons/build/build.ts",
+    "start-dev": "react-scripts start"
   },
   "author": "Laurel Daigneault",
   "license": "ISC",
@@ -80,6 +81,7 @@
     "@types/jest": "^27.0.0",
     "@types/lodash": "^4.14.202",
     "@types/react": "^17.0.50",
+    "@types/react-dom": "^18.2.17",
     "@types/svgo": "^2.6.4",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@types/tinycolor2": "^1.4.6",
@@ -103,11 +105,12 @@
     "lodash": "^4.17.20",
     "npm": "^10.5.0",
     "prettier": "^2.7.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.2",
+    "react-dom": "^18.0.2",
     "react-jss": "^10.9.2",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.16.0",
+    "react-scripts": "5.0.1",
     "rollup": "^2.79.1",
     "rollup-plugin-dts": "^4.2.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -125,5 +128,17 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

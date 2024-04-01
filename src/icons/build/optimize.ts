@@ -5,14 +5,14 @@ import { optimize as svgo } from 'svgo';
 const _ = require('lodash');
 import createPackage from './packager';
 
-export default function optimize(pattern: string, svgoOptions): void {
+export default function optimize(pattern: string, svgoOptions: any): void {
   const optimizedList: any[] = [];
   const filePaths = G.sync(pattern);
 
   filePaths.forEach((filePath: string): void => {
     try {
       const name = path.basename(filePath, path.extname(filePath));
-      fs.readFile(filePath, 'utf8', (err, fileData) => {
+      fs.readFile(filePath, 'utf8', (err: any, fileData: any) => {
         if (err) {
           throw err;
         }
