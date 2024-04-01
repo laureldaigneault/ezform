@@ -1,12 +1,20 @@
 import { Unstable_Popup as BasePopup, PopupProps as BasePopupProps } from '@mui/base';
 import { BaseComponentProps } from '../../utils/types';
-import { FC, useLayoutEffect, useState } from 'react';
+import { FC, ReactNode, useLayoutEffect, useState } from 'react';
 import { styled } from '../../styles/theme';
+import { XIcon } from 'icons';
 
 export type PopupProps = BasePopupProps &
-  BaseComponentProps & { anchorRef?: any; anchorId?: string; animated?: boolean; color?: string };
+  BaseComponentProps & {
+    anchorRef?: any;
+    anchorId?: string;
+    animated?: boolean;
+    color?: string;
+    children: ReactNode;
+    onClose?: () => void;
+  };
 
-export const Popup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, color, ...rest }) => {
+export const Popup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, color, children, onClose, ...rest }) => {
   const [anchor, setAnchor] = useState<any>();
   useLayoutEffect(() => {
     if (anchorRef?.current) setAnchor(anchorRef.current);
@@ -21,7 +29,14 @@ export const Popup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, co
       slots={{ root: Root }}
       slotProps={{ root: { ...rest, animated, color } as any }}
       offset={{ mainAxis: 25, crossAxis: -30 }}>
-      as dfsadfasfd
+      {children}
+      {onClose && (
+        <XIcon
+          style={{ position: 'absolute', right: '5px', top: '5px', cursor: 'pointer' }}
+          size={15}
+          onClick={() => onClose?.()}
+        />
+      )}
       <Arrow
         className={`${side ? `side side-${side} side-${side}-${align || 'center'}` : ''} ${animated ? 'animated' : ''}`}
         color={color}
