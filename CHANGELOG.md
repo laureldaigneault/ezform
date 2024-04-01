@@ -1,3 +1,10 @@
+## [1.0.23](https://github.com/laureldaigneault/ezform/compare/v1.0.22...v1.0.23) (2024-04-01)
+
+
+### Bug Fixes
+
+* isolated ctx prop ([c7cfd4f](https://github.com/laureldaigneault/ezform/commit/c7cfd4feb3b266e82b13b1bc1e5f0f7c5949a172))
+
 ## [1.0.22](https://github.com/laureldaigneault/ezform/compare/v1.0.21...v1.0.22) (2024-03-27)
 
 
