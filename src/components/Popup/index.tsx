@@ -6,7 +6,7 @@ import { styled } from '../../styles/theme';
 export type PopupProps = BasePopupProps &
   BaseComponentProps & { anchorRef?: any; anchorId?: string; animated?: boolean };
 
-const Popup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, ...rest }) => {
+const RootPopup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, ...rest }) => {
   const memoizedAnchor = useMemo(() => {
     if (anchorRef) return anchorRef?.current;
     if (anchorId) return document.getElementById(anchorId);
@@ -69,7 +69,7 @@ const Arrow = styled('div')((props: any) => {
   };
 });
 
-const StyledPopup = styled(Popup)<PopupProps>(({ theme, animated, placement = '' }) => {
+const Popup = styled(RootPopup)<PopupProps>(({ theme, animated, placement = '' }) => {
   const isY = ['top', 'bottom'].includes(placement);
   const isX = ['left', 'right'].includes(placement);
   return {
@@ -99,4 +99,4 @@ const StyledPopup = styled(Popup)<PopupProps>(({ theme, animated, placement = ''
   };
 });
 
-export default StyledPopup;
+export default Popup;
