@@ -18,6 +18,7 @@ export const Popup: FC<PopupProps> = ({ anchorRef = null, anchorId, animated, co
   const [anchor, setAnchor] = useState<any>();
   useLayoutEffect(() => {
     if (anchorRef?.current) setAnchor(anchorRef.current);
+
     if (anchorId) setAnchor(document.getElementById(anchorId));
   }, [anchorId]);
 
