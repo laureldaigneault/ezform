@@ -1,3 +1,10 @@
+## [1.0.28](https://github.com/laureldaigneault/ezform/compare/v1.0.27...v1.0.28) (2024-04-01)
+
+
+### Bug Fixes
+
+* arrow placement ([05d5563](https://github.com/laureldaigneault/ezform/commit/05d5563ef39a21ca8e548f0a888408762e21b3d0))
+
 ## [1.0.27](https://github.com/laureldaigneault/ezform/compare/v1.0.26...v1.0.27) (2024-04-01)
 
 
