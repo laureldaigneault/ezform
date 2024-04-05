@@ -1,6 +1,6 @@
 {
   "name": "@laureldaigneault/ezform",
-  "version": "1.0.30",
+  "version": "1.0.29",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,7 +15,8 @@
     "build-storybook": "storybook build",
     "test": "jest --passWithNoTests",
     "build:svg": "babel-node -x .ts -- ./src/icons/build/build.ts",
-    "start-dev": "react-scripts start"
+    "start-dev": "react-scripts start",
+    "eject-dev": "react-scripts eject"
   },
   "author": "Laurel Daigneault",
   "license": "ISC",
