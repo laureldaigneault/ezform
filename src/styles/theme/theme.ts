@@ -70,13 +70,14 @@ const createTheme = (inputTheme: InputThemeType): ThemeType => {
         saturate?: number;
         desaturate?: number;
         greyscale?: number;
+        alpha?: number;
       }
     ) => {
-      const { fallback = 'basic', darken, lighten, saturate, desaturate, greyscale } = options || {};
+      const { fallback = 'basic', darken, lighten, saturate, desaturate, greyscale, alpha } = options || {};
       const _color = color ?? fallback;
       const clonedTheme = cloneDeep(compiledTheme);
       const outputColor = clonedTheme.palette.color[_color] || clonedTheme.palette.color['basic'];
-      // TODO: darken and lighten utilities
+
       if (lighten !== undefined) {
         outputColor.hex = tinycolor(outputColor.hex).lighten(lighten).toString();
         outputColor.contrastTextHex = getContrastText(outputColor.hex, clonedTheme);
@@ -95,6 +96,10 @@ const createTheme = (inputTheme: InputThemeType): ThemeType => {
       }
       if (greyscale) {
         outputColor.hex = tinycolor(outputColor.hex).greyscale().toString();
+        outputColor.contrastTextHex = getContrastText(outputColor.hex, clonedTheme);
+      }
+      if (alpha) {
+        outputColor.hex = tinycolor(outputColor.hex).setAlpha(alpha).toString();
         outputColor.contrastTextHex = getContrastText(outputColor.hex, clonedTheme);
       }
 
