@@ -1,3 +1,10 @@
+## [1.0.30](https://github.com/laureldaigneault/ezform/compare/v1.0.29...v1.0.30) (2024-04-05)
+
+
+### Bug Fixes
+
+* isolated prop ([7b3a03d](https://github.com/laureldaigneault/ezform/commit/7b3a03d3c087cfa305d33bc6a9b7e5fac339f11e))
+
 ## [1.0.29](https://github.com/laureldaigneault/ezform/compare/v1.0.28...v1.0.29) (2024-04-01)
 
 
