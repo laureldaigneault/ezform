@@ -493,8 +493,6 @@ export const withField: WithFieldFunctionType = (C, config = {}) => {
     const field = useField();
 
     if (props._isolated) {
-      delete props._isolated;
-
       return <C {...props} />;
     }
     const [_onChangePropWithPotentialIndex, ...onChangePath] = _onChange.split('.');
