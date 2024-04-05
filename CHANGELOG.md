@@ -1,3 +1,10 @@
+## [1.0.32](https://github.com/laureldaigneault/ezform/compare/v1.0.31...v1.0.32) (2024-04-05)
+
+
+### Bug Fixes
+
+* added slpha support in theme getColor method ([6d2be84](https://github.com/laureldaigneault/ezform/commit/6d2be84dced52087491e9158eac3bca9fed5cbda))
+
 ## [1.0.31](https://github.com/laureldaigneault/ezform/compare/v1.0.30...v1.0.31) (2024-04-05)
 
 
