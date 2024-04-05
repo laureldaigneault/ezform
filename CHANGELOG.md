@@ -1,3 +1,13 @@
+## [1.0.31](https://github.com/laureldaigneault/ezform/compare/v1.0.30...v1.0.31) (2024-04-05)
+
+
+### Bug Fixes
+
+* build pipeline and local dev setup ([d8855f0](https://github.com/laureldaigneault/ezform/commit/d8855f0c845fd97960ed5ec69173801d2eeb7ef5))
+* linting ([3f6e7ce](https://github.com/laureldaigneault/ezform/commit/3f6e7ce221a9f6c7c0e8691f7da6d78016d58fa7))
+* lol ([c04b973](https://github.com/laureldaigneault/ezform/commit/c04b973de888d260c6ac4f20c70d4c974661ad01))
+* we ([04ee6d3](https://github.com/laureldaigneault/ezform/commit/04ee6d3b8fb862a46c2bad3c7055365ccd27ab83))
+
 ## [1.0.30](https://github.com/laureldaigneault/ezform/compare/v1.0.29...v1.0.30) (2024-04-05)
 
 
